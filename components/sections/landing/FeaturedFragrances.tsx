@@ -85,7 +85,7 @@ export function FeaturedFragrances() {
             <Link
               key={p.id}
               href={`/products/${p.id}`}
-              className={`featured-card block cursor-pointer relative ${i === 1 || i === 3 ? "mt-[30px]" : ""}`}
+              className={`featured-card block cursor-pointer relative ${i === PRODUCTS.length - 1 && PRODUCTS.length % 2 !== 0 ? "col-span-2 justify-self-center w-[calc(50%-8px)]" : ""}`}
             >
               <div className="featured-art overflow-hidden">
                 <div className="featured-art-inner">

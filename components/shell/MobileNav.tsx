@@ -7,11 +7,10 @@ import { CloseIcon } from "@/components/ui/Icons";
 import { AnimatePresence, motion } from "framer-motion";
 
 const ITEMS = [
-  { label: "Fragrances", num: "01", href: "/collections" },
-  { label: "Collections", num: "02", href: "/collections" },
-  { label: "About", num: "03", href: "/about" },
-  { label: "Journal", num: "04", href: "/about" },
-  { label: "Stockists", num: "05", href: "/about" },
+  { label: "Collections", num: "01", href: "/collections" },
+  { label: "About", num: "02", href: "/about" },
+  { label: "Journal", num: "03", href: "/about" },
+  { label: "Stockists", num: "04", href: "/about" },
 ];
 
 export function MobileNav() {

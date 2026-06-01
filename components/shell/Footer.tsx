@@ -23,7 +23,7 @@ export function Footer() {
                 placeholder="Letters, twice a year."
                 className="bg-transparent border-0 text-cream placeholder:text-cream/45 py-3 font-[inherit] text-[14px] flex-1 outline-none"
               />
-              <button className="font-mono text-[11px] tracking-[0.16em] uppercase text-cream py-3 pl-[14px]">
+              <button className="hidden min-[880px]:block font-mono text-[11px] tracking-[0.16em] uppercase text-cream py-3 pl-[14px]">
                 Subscribe →
               </button>
             </div>
