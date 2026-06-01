@@ -54,8 +54,7 @@ export function CollectionsIndex() {
               <Link
                 key={c.id}
                 href={`/collections/${c.id}`}
-                className="coll-row grid gap-10 py-9 border-b border-line-soft cursor-pointer relative block max-[880px]:grid-cols-1 max-[880px]:gap-2 max-[880px]:py-6"
-                style={{ gridTemplateColumns: "90px 1.4fr 1fr 1fr auto" }}
+                className="coll-row grid grid-cols-[90px_1.4fr_1fr_1fr_auto] gap-10 py-9 border-b border-line-soft cursor-pointer relative block max-[880px]:grid-cols-1 max-[880px]:gap-2 max-[880px]:py-6"
               >
                 <span className="font-mono text-[11px] tracking-[0.18em] text-muted">SER. {c.no}</span>
                 <span className="font-serif text-[56px] font-light leading-none tracking-[-0.01em] max-[880px]:text-[40px]">

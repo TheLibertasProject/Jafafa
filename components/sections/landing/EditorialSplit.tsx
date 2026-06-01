@@ -7,7 +7,7 @@ export function EditorialSplit() {
   return (
     <section className="py-[110px] max-[880px]:py-[70px]">
       <div className="w-full max-w-[1200px] mx-auto px-10 max-[720px]:px-5">
-        <div className="grid gap-[100px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-10" style={{ gridTemplateColumns: "1fr 1fr" }}>
+        <div className="grid grid-cols-[1fr_1fr] gap-[100px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-10">
           {/* Art */}
           <div className="relative">
             <Placeholder

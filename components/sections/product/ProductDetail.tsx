@@ -149,8 +149,7 @@ export function ProductDetail({ id }: { id: string }) {
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         {/* PDP grid */}
         <div
-          className="grid gap-20 pt-[30px] pb-20 items-start max-[880px]:grid-cols-1 max-[880px]:gap-9 max-[880px]:pt-5 max-[880px]:pb-10"
-          style={{ gridTemplateColumns: "1.15fr 1fr" }}
+          className="grid grid-cols-[1.15fr_1fr] gap-20 pt-[30px] pb-20 items-start max-[880px]:grid-cols-1 max-[880px]:gap-9 max-[880px]:pt-5 max-[880px]:pb-10"
         >
           {/* Left — Art */}
           <div className="sticky top-[100px] max-[880px]:static">
@@ -294,7 +293,7 @@ export function ProductDetail({ id }: { id: string }) {
             </div>
           </div>
 
-          <div className="grid gap-[60px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]" style={{ gridTemplateColumns: "220px 1fr" }}>
+          <div className="grid grid-cols-[220px_1fr] gap-[60px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
             <div className="max-[880px]:mx-auto">
               <ScentPyramid product={product} />
             </div>
@@ -302,8 +301,7 @@ export function ProductDetail({ id }: { id: string }) {
               {(["top", "heart", "base"] as const).map((tier) => (
                 <div
                   key={tier}
-                  className="grid gap-[18px] items-baseline py-[18px] border-b border-line-soft"
-                  style={{ gridTemplateColumns: "90px 1fr 1fr" }}
+                  className="grid grid-cols-[90px_1fr_1fr] gap-[18px] items-baseline py-[18px] border-b border-line-soft max-[880px]:grid-cols-1 max-[880px]:gap-[4px]"
                 >
                   <span className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted capitalize">{tier}</span>
                   <span className={`font-serif font-light text-[28px] leading-none ${tier === "top" ? "text-sage" : "text-ink"}`}>
@@ -336,7 +334,7 @@ export function ProductDetail({ id }: { id: string }) {
         </div>
 
         {/* How to wear / Ingredients */}
-        <div className="grid gap-[60px] py-[60px] border-t border-line-soft border-b max-[880px]:grid-cols-1 max-[880px]:gap-10" style={{ gridTemplateColumns: "1fr 1fr" }}>
+        <div className="grid grid-cols-[1fr_1fr] gap-[60px] py-[60px] border-t border-line-soft border-b max-[880px]:grid-cols-1 max-[880px]:gap-10">
           <div>
             <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Composition</div>
             <h3 className="font-serif font-light text-[36px] leading-none mt-[10px] mb-4">How to wear</h3>

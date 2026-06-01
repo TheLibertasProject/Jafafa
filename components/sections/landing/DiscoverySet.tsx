@@ -24,8 +24,7 @@ export function DiscoverySet() {
     <section className="py-[110px] max-[880px]:py-[70px]">
       <div className="w-full max-w-[1200px] mx-auto px-10 max-[720px]:px-5">
         <div
-          className="grid items-center gap-20 p-[80px_60px] border border-line-soft bg-paper max-[880px]:grid-cols-1 max-[880px]:gap-10 max-[880px]:p-[40px_24px]"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
+          className="grid grid-cols-[1fr_1fr] items-center gap-20 p-[80px_60px] border border-line-soft bg-paper max-[880px]:grid-cols-1 max-[880px]:gap-10 max-[880px]:p-[40px_24px]"
         >
           {/* Text */}
           <div>

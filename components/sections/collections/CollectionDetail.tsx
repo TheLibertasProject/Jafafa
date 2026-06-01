@@ -101,8 +101,7 @@ export function CollectionDetail({ id }: { id: string }) {
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         {/* Collection head */}
         <div
-          className="grid gap-[60px] items-end pt-[50px] pb-20 max-[880px]:grid-cols-1 max-[880px]:gap-4 max-[880px]:pt-[30px] max-[880px]:pb-[50px]"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
+          className="grid grid-cols-[1fr_1fr] gap-[60px] items-end pt-[50px] pb-20 max-[880px]:grid-cols-1 max-[880px]:gap-4 max-[880px]:pt-[30px] max-[880px]:pb-[50px]"
         >
           <div>
             <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
@@ -163,7 +162,7 @@ export function CollectionDetail({ id }: { id: string }) {
         </div>
 
         {/* Perfumer note */}
-        <div className="mt-[100px] py-[60px] border-t border-line-soft border-b grid gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-6" style={{ gridTemplateColumns: "1fr 2fr" }}>
+        <div className="mt-[100px] py-[60px] border-t border-line-soft border-b grid grid-cols-[1fr_2fr] gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-6">
           <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">From the perfumer</div>
           <div>
             <p className="font-serif font-light text-[24px] leading-[1.35] m-0 max-w-[600px]">

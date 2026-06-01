@@ -57,8 +57,7 @@ export function About() {
       {/* Photo + prose */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         <div
-          className="grid gap-20 py-10 max-[880px]:grid-cols-1 max-[880px]:gap-10"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
+          className="grid grid-cols-[1fr_1fr] gap-20 py-10 max-[880px]:grid-cols-1 max-[880px]:gap-10"
         >
           <div className="relative w-full" style={{ aspectRatio: "4 / 5" }}>
             <Image
@@ -110,8 +109,7 @@ export function About() {
       {/* Perfumers */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         <div
-          className="grid gap-[60px] py-20 items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]"
-          style={{ gridTemplateColumns: "2fr 3fr" }}
+          className="grid grid-cols-[2fr_3fr] gap-[60px] py-20 items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]"
         >
           <div>
             <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">The perfumers</div>
@@ -164,8 +162,7 @@ export function About() {
           {TIMELINE.map((row) => (
             <div
               key={row.yr}
-              className="grid gap-10 py-[30px] border-b border-line-soft items-baseline max-[880px]:grid-cols-[80px_1fr] max-[880px]:gap-5"
-              style={{ gridTemplateColumns: "120px 1fr 1.6fr" }}
+              className="grid grid-cols-[120px_1fr_1.6fr] gap-10 py-[30px] border-b border-line-soft items-baseline max-[880px]:grid-cols-[80px_1fr] max-[880px]:gap-5"
             >
               <div className="font-mono text-[13px] tracking-[0.14em] text-sage">{row.yr}</div>
               <div className="font-serif font-light text-[28px]">{row.hd}</div>
@@ -178,8 +175,7 @@ export function About() {
       {/* Visit CTA */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-20 pb-0">
         <div
-          className="p-[60px_50px] bg-ink text-cream grid items-center gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-8 max-[880px]:p-[40px_24px]"
-          style={{ gridTemplateColumns: "1.4fr 1fr" }}
+          className="p-[60px_50px] bg-ink text-cream grid grid-cols-[1.4fr_1fr] items-center gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-8 max-[880px]:p-[40px_24px]"
         >
           <div>
             <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-cream/60">Visit the maison</div>

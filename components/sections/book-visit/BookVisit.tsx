@@ -379,8 +379,7 @@ export function BookVisit() {
       {/* ── Page header ─────────────────────────────────────────────────── */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         <div
-          className="grid gap-[60px] items-end pt-[40px] pb-20 max-[880px]:grid-cols-1 max-[880px]:gap-6 max-[880px]:pb-10"
-          style={{ gridTemplateColumns: "1.2fr 1fr" }}
+          className="grid grid-cols-[1.2fr_1fr] gap-[60px] items-end pt-[40px] pb-20 max-[880px]:grid-cols-1 max-[880px]:gap-6 max-[880px]:pb-10"
         >
           <div>
             <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
@@ -414,8 +413,7 @@ export function BookVisit() {
       {/* ── Booking section ──────────────────────────────────────────────── */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pb-28 border-t border-line-soft">
         <div
-          className="grid gap-[80px] pt-14 items-start max-[880px]:grid-cols-1 max-[880px]:gap-12"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
+          className="grid grid-cols-[1fr_1fr] gap-[80px] pt-14 items-start max-[880px]:grid-cols-1 max-[880px]:gap-12"
         >
 
           {/* ── LEFT: Calendar + info ──────────────────────────────────── */}

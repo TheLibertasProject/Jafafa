@@ -5,8 +5,7 @@ export function Footer() {
     <footer className="bg-ink text-cream pt-20 pb-[30px] mt-[120px] max-[880px]:pt-[60px] max-[880px]:pb-6 max-[880px]:mt-20">
       <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 text-cream">
         <div
-          className="grid gap-[60px] pb-[60px] max-[880px]:grid-cols-2 max-[880px]:gap-x-6 max-[880px]:gap-y-10 max-[880px]:pb-10"
-          style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr" }}
+          className="grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-[60px] pb-[60px] max-[880px]:grid-cols-2 max-[880px]:gap-x-6 max-[880px]:gap-y-10 max-[880px]:pb-10"
         >
           {/* Brand col */}
           <div>

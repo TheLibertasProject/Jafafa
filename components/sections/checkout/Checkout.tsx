@@ -212,8 +212,7 @@ export function Checkout() {
 
         {/* Two-column layout */}
         <div
-          className="grid gap-[80px] pt-14 items-start max-[880px]:grid-cols-1 max-[880px]:gap-12"
-          style={{ gridTemplateColumns: "1fr 1fr" }}
+          className="grid grid-cols-[1fr_1fr] gap-[80px] pt-14 items-start max-[880px]:grid-cols-1 max-[880px]:gap-12"
         >
 
           {/* ── LEFT: Cart items ─────────────────────────────── */}

@@ -20,7 +20,7 @@ export function Hero() {
     <section className="relative pb-20 max-[880px]:pb-[60px]">
       {/* Main grid */}
       <div
-        className="grid gap-[60px] px-10 pt-[40px] items-end grid-cols-[1.05fr_1fr] min-h-[70vh] max-[880px]:grid-cols-1 max-[880px]:min-h-0"
+        className="grid gap-[60px] px-10 pt-[40px] items-end grid-cols-[1.05fr_1fr] min-h-[70vh] max-[880px]:grid-cols-1 max-[880px]:min-h-0 max-[720px]:px-5"
       >
         {/* Text col */}
         <div className="pb-[60px] pr-10 max-[880px]:pb-0 max-[880px]:pr-0 max-[880px]:order-2">
@@ -71,7 +71,7 @@ export function Hero() {
 
         {/* Art col */}
         <div
-          className="relative max-[880px]:order-1 h-[80vh] max-h-[760px] min-h-[480px] max-[880px]:h-[70vw] max-[880px]:max-h-none max-[880px]:min-h-0"
+          className="relative overflow-hidden max-[880px]:order-1 h-[80vh] max-h-[760px] min-h-[480px] max-[880px]:h-[70vw] max-[880px]:max-h-none max-[880px]:min-h-0"
         >
           <div className="hero-drift">
             <Placeholder
