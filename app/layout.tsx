@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, JetBrains_Mono, Inter } from "next/font/google";
+import { Cormorant, EB_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/shell/Nav";
 import { MobileNav } from "@/components/shell/MobileNav";
 import { CartDrawer } from "@/components/shell/CartDrawer";
 import { Footer } from "@/components/shell/Footer";
 
-const cormorant = Cormorant_Garamond({
+// Display serif — headlines & product names (handoff: Cormorant 300/400/500/600)
+const cormorant = Cormorant({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
+// Body serif — paragraphs, footer links, italic taglines (handoff: EB Garamond)
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin"],
   weight: ["400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+// Sans — uppercase labels, eyebrows, prices, buttons, nav (handoff: Jost)
+const jost = Jost({
+  variable: "--font-jost",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
@@ -47,9 +51,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${jetbrains.variable} ${inter.variable}`}
+      className={`${cormorant.variable} ${ebGaramond.variable} ${jost.variable}`}
     >
-      <body className="min-h-screen flex flex-col" style={{ background: "#efe7dc" }}>
+      <body className="min-h-screen flex flex-col" style={{ background: "#f5f1e9" }}>
         <Nav />
         <div className="flex-1">{children}</div>
         <Footer />

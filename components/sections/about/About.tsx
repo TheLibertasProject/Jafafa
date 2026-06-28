@@ -188,7 +188,7 @@ export function About() {
           <div className="justify-self-end max-[880px]:justify-self-start">
             <Link
               href="/book-visit"
-              className="inline-flex items-center justify-center h-[46px] px-[22px] bg-gold text-ink border border-gold hover:bg-gold-soft hover:border-gold-soft font-sans text-[13px] tracking-[0.06em] uppercase font-medium rounded-full transition-all duration-[220ms]"
+              className="inline-flex items-center justify-center h-[46px] px-[26px] bg-cream text-ink border border-cream hover:opacity-[0.84] font-sans text-[12px] tracking-[0.2em] uppercase font-medium rounded-full transition-opacity duration-[220ms]"
             >
               Book a visit →
             </Link>

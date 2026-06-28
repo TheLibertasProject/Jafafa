@@ -47,7 +47,7 @@ function ScentPyramid({ product }: { product: Product }) {
             <text
               x={cx}
               y={y - 8}
-              fontFamily="var(--font-jetbrains), monospace"
+              fontFamily="var(--font-jost), sans-serif"
               fontSize="9"
               letterSpacing="2"
               textAnchor="middle"
@@ -65,7 +65,7 @@ function ScentPyramid({ product }: { product: Product }) {
       <text
         x="110"
         y="238"
-        fontFamily="var(--font-jetbrains), monospace"
+        fontFamily="var(--font-jost), sans-serif"
         fontSize="8"
         letterSpacing="2"
         textAnchor="middle"

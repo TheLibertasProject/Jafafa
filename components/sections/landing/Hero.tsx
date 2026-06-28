@@ -1,111 +1,70 @@
-"use client";
-
-import Link from "next/link";
-import { Placeholder } from "@/components/ui/Placeholder";
-import { ArrowRightIcon } from "@/components/ui/Icons";
+import Image from "next/image";
 import { img } from "@/lib/images";
 
-const TICKER_ITEMS = [
-  "Composed in Grasse",
-  "Bottled in Helsinki",
-  "IFRA-certified",
-  "Vegan & cruelty-free",
-  "Recyclable glass",
-  "Small-batch",
-  "Botanical sourcing",
-];
+const HERO_SRC = img("landing/hero");
 
 export function Hero() {
   return (
-    <section className="relative pb-20 max-[880px]:pb-[60px]">
-      {/* Main grid */}
-      <div
-        className="grid gap-[60px] px-10 pt-[40px] items-end grid-cols-[1.05fr_1fr] min-h-[70vh] max-[880px]:grid-cols-1 max-[880px]:min-h-0 max-[720px]:px-5"
-      >
-        {/* Text col */}
-        <div className="pb-[60px] pr-10 max-[880px]:pb-0 max-[880px]:pr-0 max-[880px]:order-2">
-          <div className="reveal font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2 flex gap-3 flex-wrap" style={{ animationDelay: "0.05s" }}>
-            <span>Maison Jafafa</span>
-            <span className="mx-3">·</span>
-            <span>Olfactive Botanicals</span>
-            <span className="mx-3">·</span>
-            <span>est. MMXIX</span>
-          </div>
-
-          <h1
-            className="reveal font-serif font-light mt-[26px] mb-8 leading-[0.92]"
-            style={{
-              fontSize: "clamp(72px, 11vw, 168px)",
-              animationDelay: "0.18s",
-            }}
-          >
-            <span className="block" style={{ animationDelay: "0.18s" }}>The garden,</span>
-            <em className="block italic" style={{ animationDelay: "0.32s" }}>distilled.</em>
-          </h1>
-
-          <div className="reveal max-w-[460px]" style={{ animationDelay: "0.5s" }}>
-            <p className="font-serif font-light text-[24px] leading-[1.35] tracking-[-0.005em] text-ink m-0">
-              Five fragrances. Three collections. Composed slowly,
-              from botanicals chosen for their patience.
-            </p>
-          </div>
-
-          <div className="reveal flex gap-[22px] items-center mt-10 max-[880px]:flex-col max-[880px]:items-start max-[880px]:gap-[18px]" style={{ animationDelay: "0.65s" }}>
-            <Link
-              href="/collections"
-              className="inline-flex items-center justify-center gap-[10px] h-[46px] px-[22px] bg-gold text-ink font-sans text-[13px] tracking-[0.06em] uppercase font-medium rounded-full hover:bg-gold-soft border border-gold hover:border-gold-soft transition-all duration-[220ms]"
-            >
-              Explore fragrances
-            </Link>
-            <Link
-              href="/about"
-              className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group"
-            >
-              The maison{" "}
-              <span className="inline-block transition-transform duration-[240ms] group-hover:translate-x-1">
-                <ArrowRightIcon />
-              </span>
-            </Link>
-          </div>
-        </div>
-
-        {/* Art col */}
+    <section className="relative flex items-end min-h-[88vh] overflow-hidden">
+      {/* Photography (placeholder for editorial hero) */}
+      {HERO_SRC ? (
+        <Image
+          src={HERO_SRC}
+          alt="Maison Jafafa — the garden, distilled"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      ) : (
         <div
-          className="relative overflow-hidden max-[880px]:order-1 h-[80vh] max-h-[760px] min-h-[480px] max-[880px]:h-[70vw] max-[880px]:max-h-none max-[880px]:min-h-0"
-        >
-          <div className="hero-drift">
-            <Placeholder
-              src={img("landing/hero")}
-              alt="Jafafa hero"
-              kind="dark"
-              label="hero · 03 botanicals on linen"
-              code="IMG_001"
-              ratio="3 / 4"
-              style={{ height: "100%", aspectRatio: "unset" }}
-            />
-          </div>
-          <div className="absolute bottom-[-40px] left-0 flex items-center gap-3 font-mono text-[11px] tracking-[0.18em] uppercase text-muted max-[880px]:bottom-[-28px]">
-            <span>N° 002 — Composition</span>
-            <span className="w-[5px] h-[5px] rounded-full bg-current opacity-40" />
-            <span>Helsinki, 04:12</span>
-          </div>
-        </div>
-      </div>
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(130% 95% at 26% 16%, rgba(206,170,108,.40), transparent 55%), radial-gradient(120% 110% at 82% 88%, rgba(122,78,46,.34), transparent 60%), linear-gradient(158deg,#3a2c1d 0%,#241a11 58%,#130d08 100%)",
+          }}
+        />
+      )}
 
-      {/* Ticker */}
-      <div className="mt-[100px] border-t border-line-soft border-b overflow-hidden py-4 relative max-[880px]:mt-[70px]">
-        <div className="ticker-track">
-          {Array.from({ length: 3 }).flatMap((_, ti) =>
-            TICKER_ITEMS.map((s, i) => (
-              <span
-                key={`${ti}-${i}`}
-                className="inline-flex items-center gap-[18px] font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2"
-              >
-                <span className="w-1 h-1 rounded-full bg-sage" />
-                {s}
-              </span>
-            ))
-          )}
+      {/* Top-down darkening wash */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(12,8,4,.34) 0%, rgba(12,8,4,.04) 34%, rgba(12,8,4,.62) 100%)",
+        }}
+      />
+
+      {/* Bottom-aligned, centered editorial content */}
+      <div className="relative w-full max-w-[1240px] mx-auto px-[52px] pb-[9.5vh] flex flex-col items-center text-center max-[720px]:px-6">
+        <div
+          className="reveal font-sans font-medium text-[11px] uppercase mb-[30px] max-[720px]:text-[10px]"
+          style={{ letterSpacing: "0.34em", color: "rgba(245,238,226,.82)" }}
+        >
+          Maison Jafafa · Olfactive Botanicals · Est. MMXIX
+        </div>
+        <h1
+          className="reveal font-serif font-light m-0"
+          style={{
+            fontSize: "clamp(54px, 7.2vw, 108px)",
+            lineHeight: 0.97,
+            letterSpacing: "-0.012em",
+            color: "#f5ede1",
+            animationDelay: "0.12s",
+          }}
+        >
+          The garden, distilled.
+        </h1>
+        <div
+          className="reveal font-sans font-medium text-[12px] uppercase mt-[34px]"
+          style={{
+            letterSpacing: "0.52em",
+            paddingLeft: "0.52em",
+            color: "rgba(245,238,226,.72)",
+            animationDelay: "0.28s",
+          }}
+        >
+          Jafafa
         </div>
       </div>
     </section>

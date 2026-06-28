@@ -39,7 +39,7 @@ export function MobileNav() {
         >
           {/* Head */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-line-soft">
-            <span className="font-serif font-normal text-[20px] tracking-[0.18em]">JAFAFA</span>
+            <span className="font-sans font-medium text-[18px] tracking-[0.42em] pl-[0.42em]">JAFAFA</span>
             <button
               onClick={closeMenu}
               className="w-9 h-9 inline-flex items-center justify-center rounded-full hover:bg-black/[0.04]"

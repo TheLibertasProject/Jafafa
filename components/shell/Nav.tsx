@@ -1,107 +1,63 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useStore } from "@/lib/store";
-import { SearchIcon, UserIcon, BagIcon, MenuIcon } from "@/components/ui/Icons";
-
-const NAV_PRIMARY = [
-  { label: "Shop", href: "/collections", match: (p: string) => p.startsWith("/collections") || p.startsWith("/products") },
-  { label: "Collections", href: "/collections", match: (p: string) => p.startsWith("/collections") },
-];
-const NAV_SECONDARY = [
-  { label: "Story", href: "/about", match: (p: string) => p === "/about" },
-];
+import { SearchIcon, UserIcon, BagIcon } from "@/components/ui/Icons";
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-  const { openCart, openMenu } = useStore();
+  const openCart = useStore((s) => s.openCart);
+  const openMenu = useStore((s) => s.openMenu);
   const count = useStore((s) => s.count());
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <header
-      className={[
-        "sticky top-0 z-40 transition-all duration-[240ms] ease-out",
-        scrolled
-          ? "bg-cream/92 backdrop-blur-[10px] backdrop-saturate-[140%] border-b border-line-soft"
-          : "bg-cream border-b border-transparent",
-      ].join(" ")}
+      className="sticky top-0 z-50 border-b border-line"
+      style={{
+        background: "color-mix(in srgb, var(--color-cream) 86%, transparent)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+      }}
     >
-      <div
-        className={[
-          "grid items-center gap-6 transition-[padding] duration-[240ms] ease-out",
-          "max-w-[1440px] mx-auto",
-          scrolled ? "px-10 py-[14px]" : "px-10 py-[22px]",
-          "[grid-template-columns:1fr_auto_1fr]",
-          "max-[880px]:px-5 max-[880px]:py-[14px] max-[880px]:[grid-template-columns:auto_1fr_auto]",
-        ].join(" ")}
-      >
-        {/* Desktop nav — left */}
-        <nav className="hidden min-[880px]:flex items-center gap-8 font-mono text-[11px] tracking-[0.18em] uppercase">
-          {[...NAV_PRIMARY, ...NAV_SECONDARY].map((item) => {
-            const isActive = item.match ? item.match(pathname) : false;
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={["nav-link relative py-1 cursor-pointer", isActive ? "active" : ""].join(" ")}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* Mobile — hamburger */}
-        <div className="min-[880px]:hidden flex items-center gap-[14px]">
+      <div className="max-w-[1240px] mx-auto px-[52px] py-[17px] grid items-center [grid-template-columns:1fr_auto_1fr] max-[720px]:px-6">
+        {/* Left — menu */}
+        <div className="flex items-center gap-[14px] text-ink justify-self-start">
           <button
-            aria-label="Menu"
             onClick={openMenu}
-            className="w-9 h-9 inline-flex items-center justify-center rounded-full hover:bg-black/[0.04]"
+            aria-label="Menu"
+            className="flex flex-col gap-1 cursor-pointer py-1"
           >
-            <MenuIcon />
+            <span className="block w-[22px] h-px bg-current" />
+            <span className="block w-[22px] h-px bg-current" />
+          </button>
+          <button
+            onClick={openMenu}
+            className="font-sans font-medium text-[10.5px] uppercase tracking-[0.26em] text-ink-2 max-[520px]:hidden cursor-pointer"
+          >
+            Menu
           </button>
         </div>
 
-        {/* Brand / wordmark — center */}
+        {/* Center — wordmark */}
         <Link
           href="/"
-          className="font-serif font-normal text-[28px] tracking-[0.18em] text-center select-none max-[880px]:text-[22px] max-[880px]:tracking-[0.22em]"
+          className="font-sans font-medium text-[19px] text-ink text-center select-none max-[520px]:text-[16px]"
+          style={{ letterSpacing: "0.42em", paddingLeft: "0.42em" }}
         >
           JAFAFA
         </Link>
 
-        {/* Right — icons */}
-        <div className="flex items-center gap-2 justify-end">
-          <button
-            aria-label="Search"
-            className="w-9 h-9 inline-flex items-center justify-center rounded-full hover:bg-black/[0.04]"
-          >
-            <SearchIcon />
-          </button>
-          <button
-            aria-label="Account"
-            className="w-9 h-9 inline-flex items-center justify-center rounded-full hover:bg-black/[0.04]"
-          >
-            <UserIcon />
-          </button>
-          <button
-            aria-label="Cart"
-            onClick={openCart}
-            className="w-9 h-9 inline-flex items-center justify-center rounded-full hover:bg-black/[0.04] relative"
-          >
-            <BagIcon />
+        {/* Right — utilities */}
+        <div className="flex items-center justify-end gap-[22px] text-ink justify-self-end max-[520px]:gap-4">
+          <Link href="/collections" aria-label="Search" className="inline-flex">
+            <SearchIcon width={17} height={17} />
+          </Link>
+          <Link href="/about" aria-label="Account" className="inline-flex max-[520px]:hidden">
+            <UserIcon width={17} height={17} />
+          </Link>
+          <button onClick={openCart} aria-label="Bag" className="relative inline-flex cursor-pointer">
+            <BagIcon width={17} height={17} />
             {count > 0 && (
-              <span className="absolute top-1 right-1 min-w-[16px] h-4 px-1 rounded-full bg-sage text-paper font-mono text-[9px] font-medium inline-flex items-center justify-center tracking-[0.04em]">
+              <span className="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 rounded-full bg-ink text-cream font-sans text-[9px] font-medium inline-flex items-center justify-center tracking-[0.02em]">
                 {count}
               </span>
             )}

@@ -1,56 +1,46 @@
-import Link from "next/link";
 import { Placeholder } from "@/components/ui/Placeholder";
-import { ArrowRightIcon } from "@/components/ui/Icons";
 import { img } from "@/lib/images";
 
 export function EditorialSplit() {
   return (
-    <section className="py-[110px] max-[880px]:py-[70px]">
-      <div className="w-full max-w-[1200px] mx-auto px-10 max-[720px]:px-5">
-        <div className="grid grid-cols-[1fr_1fr] gap-[100px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-10">
-          {/* Art */}
-          <div className="relative">
+    <section className="bg-cream-deep border-t border-b border-line">
+      <div className="max-w-[1240px] mx-auto px-[52px] py-[132px] max-[880px]:py-[90px] max-[720px]:px-6">
+        <div className="flex gap-20 items-center max-[880px]:flex-col max-[880px]:gap-12">
+          {/* Image */}
+          <div className="flex-1 min-w-0 w-full">
             <Placeholder
               src={img("landing/atelier")}
-              alt="Atelier in Grasse, May"
+              alt="The atelier in Grasse"
               label="atelier · grasse, may"
-              code="IMG_217"
+              code="PLATE 02"
               ratio="4 / 5"
             />
-            <div className="flex justify-between mt-[14px] font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">
-              <span>Plate 02</span>
-              <span>Grasse, 05.24</span>
+            <div className="mt-4 font-sans font-medium text-[10px] uppercase tracking-[0.2em] text-muted">
+              Plate 02 · Grasse, 05.24
             </div>
           </div>
 
           {/* Text */}
-          <div className="grid gap-[22px] max-w-[480px] max-[880px]:max-w-none">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
+          <div className="flex-1 min-w-0">
+            <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
               N° 02 — The Method
             </div>
-            <h2 className="font-serif font-light text-[56px] leading-[0.95] mt-4 max-[880px]:text-[36px]">
-              We compose the way a botanist{" "}
-              <em className="italic">writes a letter</em>— slowly, and from life.
+            <h2
+              className="font-serif font-light text-ink m-0 mb-8"
+              style={{ fontSize: "clamp(30px, 3.4vw, 46px)", lineHeight: 1.12, letterSpacing: "-0.005em" }}
+            >
+              We compose the way a botanist writes a letter—slowly, and from life.
             </h2>
-            <p className="text-[16px] leading-[1.7] text-ink-2 m-0 max-w-[44ch]">
+            <p className="font-body text-[17.5px] leading-[1.72] text-ink-2 m-0 mb-5">
               Each Jafafa fragrance begins in a notebook: pressed leaves, a date,
               weather. The bottles come later, sometimes by years. We work in editions
               of two thousand, and we are not in a hurry to make more.
             </p>
-            <p className="text-[16px] leading-[1.7] text-ink-2 m-0 max-w-[44ch]">
+            <p className="font-body text-[17.5px] leading-[1.72] text-ink-2 m-0">
               Sourcing is direct. Frankincense from a single cooperative in the
               Boswellia hills. Iris butter cured for three winters in a stone cellar
               outside Florence. Oud aged ten years before it is allowed near the bench.
             </p>
-            <Link
-              href="/about"
-              className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group self-start"
-            >
-              The full story{" "}
-              <span className="inline-block transition-transform duration-[240ms] group-hover:translate-x-1">
-                <ArrowRightIcon />
-              </span>
-            </Link>
           </div>
         </div>
       </div>

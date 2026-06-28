@@ -142,7 +142,7 @@ export function CartDrawer() {
                 <Link
                   href="/checkout"
                   onClick={closeCart}
-                  className="w-full h-[46px] bg-gold text-ink font-sans text-[13px] tracking-[0.06em] uppercase font-medium rounded-full border border-gold hover:bg-gold-soft hover:border-gold-soft transition-all duration-[220ms] flex items-center justify-center"
+                  className="w-full h-[46px] bg-ink text-cream font-sans text-[12px] tracking-[0.2em] uppercase font-medium rounded-full border border-ink hover:opacity-[0.84] transition-opacity duration-[220ms] flex items-center justify-center"
                 >
                   Checkout
                 </Link>

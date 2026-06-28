@@ -606,7 +606,7 @@ export function BookVisit() {
                   placing
                     ? "bg-sage border-sage text-cream cursor-default"
                     : canSubmit
-                    ? "bg-gold text-ink border-gold hover:bg-gold-soft hover:border-gold-soft cursor-pointer"
+                    ? "bg-ink text-cream border-ink hover:opacity-[0.84] cursor-pointer"
                     : "bg-cream-deep border-line text-muted/50 cursor-default",
                 ].join(" ")}
               >

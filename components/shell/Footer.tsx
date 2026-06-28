@@ -1,86 +1,91 @@
 import Link from "next/link";
 
+const COLUMNS: { head: string; links: { label: string; href: string }[] }[] = [
+  {
+    head: "Shop",
+    links: [
+      { label: "All fragrances", href: "/collections" },
+      { label: "Solaires", href: "/collections/solaires" },
+      { label: "Nocturnes", href: "/collections/nocturnes" },
+      { label: "Idylls", href: "/collections/idylls" },
+      { label: "Discovery set", href: "/collections" },
+    ],
+  },
+  {
+    head: "Maison",
+    links: [
+      { label: "Our story", href: "/about" },
+      { label: "The perfumers", href: "/about" },
+      { label: "Sourcing", href: "/about" },
+      { label: "Stockists", href: "/about" },
+      { label: "Press", href: "/about" },
+    ],
+  },
+  {
+    head: "Service",
+    links: [
+      { label: "Contact", href: "/about" },
+      { label: "Shipping & returns", href: "/about" },
+      { label: "Care guide", href: "/about" },
+      { label: "FAQ", href: "/about" },
+      { label: "Book a visit", href: "/book-visit" },
+    ],
+  },
+];
+
 export function Footer() {
   return (
-    <footer className="bg-ink text-cream pt-20 pb-[30px] mt-[120px] max-[880px]:pt-[60px] max-[880px]:pb-6 max-[880px]:mt-20">
-      <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 text-cream">
-        <div
-          className="grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-[60px] pb-[60px] max-[880px]:grid-cols-2 max-[880px]:gap-x-6 max-[880px]:gap-y-10 max-[880px]:pb-10"
-        >
-          {/* Brand col */}
+    <footer className="bg-cream-deep border-t border-line">
+      <div className="max-w-[1240px] mx-auto px-[52px] pt-24 pb-10 max-[720px]:px-6">
+        <div className="grid [grid-template-columns:1.5fr_.9fr_.9fr_.9fr] gap-12 max-[880px]:grid-cols-2 max-[880px]:gap-x-8 max-[880px]:gap-y-12 max-[520px]:grid-cols-1">
+          {/* Brand + signup */}
           <div>
-            <div className="font-serif text-[44px] tracking-[0.16em] leading-none mb-[18px] max-[880px]:text-[32px]">
+            <div
+              className="font-sans font-medium text-[24px] text-ink"
+              style={{ letterSpacing: "0.36em", paddingLeft: "0.36em" }}
+            >
               JAFAFA
             </div>
-            <p className="opacity-75 max-w-[360px] text-[14px] mt-0">
-              Olfactive botanicals, slow-grown in small batches.
-              <br />
-              Bottled in Grasse and Helsinki.
+            <p className="font-body text-[16px] leading-[1.6] text-ink-2 mt-6 mb-[34px] max-w-[300px]">
+              Olfactive botanicals, slow-grown in small batches. Bottled in Grasse and Helsinki.
             </p>
-            <div className="flex items-center gap-0 border-b border-cream/40 max-w-[320px] mt-7 max-[880px]:max-w-none">
+            <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label mb-4">
+              Letters, twice a year.
+            </div>
+            <div className="flex items-center gap-3 border-b border-ink pb-[11px] max-w-[320px]">
               <input
                 type="email"
-                placeholder="Letters, twice a year."
-                className="bg-transparent border-0 text-cream placeholder:text-cream/45 py-3 font-[inherit] text-[14px] flex-1 outline-none"
+                placeholder="Your email"
+                className="flex-1 bg-transparent border-0 outline-none font-body text-[15px] text-ink placeholder:text-muted"
               />
-              <button className="hidden min-[880px]:block font-mono text-[11px] tracking-[0.16em] uppercase text-cream py-3 pl-[14px]">
-                Subscribe →
-              </button>
+              <span className="text-ink text-[16px] cursor-pointer">→</span>
             </div>
           </div>
 
-          {/* Shop */}
-          <div>
-            <h4 className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-cream/55 mb-[18px] mt-0">Shop</h4>
-            <ul className="list-none p-0 m-0 grid gap-[10px] text-[14px]">
-              {[
-                { label: "All fragrances", href: "/collections" },
-                { label: "Solaires", href: "/collections/solaires" },
-                { label: "Nocturnes", href: "/collections/nocturnes" },
-                { label: "Idylls", href: "/collections/idylls" },
-                { label: "Discovery set", href: "/collections" },
-              ].map((l) => (
-                <li key={l.label}>
-                  <Link href={l.href} className="opacity-85 hover:opacity-100 hover:text-gold-soft transition-opacity">
+          {/* Link columns */}
+          {COLUMNS.map((col) => (
+            <div key={col.head}>
+              <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label mb-6">
+                {col.head}
+              </div>
+              <div className="flex flex-col gap-[15px]">
+                {col.links.map((l) => (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    className="font-body text-[15px] text-ink-2 hover:text-ink transition-colors"
+                  >
                     {l.label}
                   </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Maison */}
-          <div>
-            <h4 className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-cream/55 mb-[18px] mt-0">Maison</h4>
-            <ul className="list-none p-0 m-0 grid gap-[10px] text-[14px]">
-              {["Our story", "The perfumers", "Sourcing", "Stockists", "Press"].map((l) => (
-                <li key={l}>
-                  <Link href="/about" className="opacity-85 hover:opacity-100 hover:text-gold-soft transition-opacity">
-                    {l}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Service */}
-          <div>
-            <h4 className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-cream/55 mb-[18px] mt-0">Service</h4>
-            <ul className="list-none p-0 m-0 grid gap-[10px] text-[14px]">
-              {["Contact", "Shipping & returns", "Care guide", "FAQ"].map((l) => (
-                <li key={l}>
-                  <Link href="/about" className="opacity-85 hover:opacity-100 hover:text-gold-soft transition-opacity">
-                    {l}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="flex justify-between items-baseline pt-7 border-t border-cream/[0.15] font-mono text-[10.5px] tracking-[0.14em] uppercase text-cream/60 max-[880px]:flex-col max-[880px]:gap-[14px]">
-          <span>© Maison Jafafa MMXXV · All rights reserved</span>
-          <span>EN · EUR € · Made between Helsinki & Grasse</span>
+        <div className="mt-[72px] pt-7 border-t border-line flex justify-between gap-6 flex-wrap font-sans font-medium text-[10px] uppercase tracking-[0.16em] text-muted">
+          <span>© Maison Jafafa MMXXV · All Rights Reserved</span>
+          <span>EN · EUR € · Made Between Helsinki & Grasse</span>
         </div>
       </div>
     </footer>

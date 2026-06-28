@@ -2,16 +2,19 @@ import Link from "next/link";
 import type { Product } from "@/lib/types";
 import { PRODUCTS, kindForCollection } from "@/lib/data";
 import { Placeholder } from "@/components/ui/Placeholder";
-import { ArrowRightIcon } from "@/components/ui/Icons";
 import { img } from "@/lib/images";
 
-function ProductCard({ p, nameClass }: { p: Product; nameClass: string }) {
+const CREDENTIALS = [
+  "Bottled in Helsinki",
+  "IFRA-Certified",
+  "Vegan & Cruelty-Free",
+  "Recyclable Packaging",
+];
+
+function GridCard({ p }: { p: Product }) {
   return (
-    <Link
-      href={`/products/${p.id}`}
-      className="featured-card block cursor-pointer relative"
-    >
-      <div className="featured-art overflow-hidden relative">
+    <Link href={`/products/${p.id}`} className="featured-card group block">
+      <div className="featured-art overflow-hidden">
         <div className="featured-art-inner">
           <Placeholder
             src={img(`product/${p.id}/main`)}
@@ -19,89 +22,131 @@ function ProductCard({ p, nameClass }: { p: Product; nameClass: string }) {
             kind={kindForCollection(p.collection)}
             label={`bottle · ${p.id}`}
             code={`N° ${p.no}`}
-            ratio="3 / 4"
+            ratio="4 / 5"
           />
         </div>
-        <div className="absolute inset-0 flex items-end justify-end p-[18px] opacity-0 hover:opacity-100 transition-opacity duration-[280ms] text-paper bg-gradient-to-b from-transparent via-transparent to-ink/50">
-          <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase">View ↗</span>
-        </div>
       </div>
-
-      {/* Consistent metadata: label → thin rule → name + price → size */}
-      <div className="mt-5">
-        <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">
-          N° {p.no} · {p.family}
-        </div>
-        <div className="flex justify-between items-baseline gap-4 border-t border-line-soft mt-[14px] pt-[14px]">
-          <span className={`font-serif font-light leading-[0.95] ${nameClass}`}>{p.name}</span>
-          <span className="font-mono text-[13px] tracking-[0.06em] text-ink-2">€{p.price}</span>
-        </div>
-        <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mt-[12px]">
-          {p.volume} · Eau de Parfum
-        </div>
+      <div className="mt-5 font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label">
+        N° {p.no} · {p.family}
+      </div>
+      <div className="flex justify-between items-baseline gap-4 mt-[14px] border-t border-line pt-[15px]">
+        <span className="font-serif font-normal text-[28px] leading-none text-ink">{p.name}</span>
+        <span className="font-sans text-[14px] tracking-[0.03em] text-ink-2 whitespace-nowrap">
+          €{p.price}
+        </span>
+      </div>
+      <div className="mt-[9px] font-sans font-medium text-[10px] uppercase tracking-[0.18em] text-muted">
+        {p.volume.toUpperCase()} · Eau de Parfum
       </div>
     </Link>
   );
 }
 
 export function FeaturedFragrances() {
-  // Split into two equal columns; the right column carries one controlled offset.
-  const left = PRODUCTS.filter((_, i) => i % 2 === 0);
-  const right = PRODUCTS.filter((_, i) => i % 2 === 1);
+  const grid = PRODUCTS.slice(0, 4);
+  const feature = PRODUCTS[4];
 
   return (
-    <section className="py-[110px] max-[880px]:py-[70px]">
-      <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-        {/* Section head */}
-        <div className="flex justify-between items-end gap-10 mb-14 max-[880px]:flex-col max-[880px]:items-start max-[880px]:gap-6 max-[880px]:mb-9">
-          <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">N° 01 — The Five</div>
-            <h2 className="font-serif font-light text-[72px] leading-[0.95] mt-[14px] max-w-[14ch] max-[880px]:text-[44px]">
-              Compositions,{" "}
-              <em className="italic">in order of intensity.</em>
-            </h2>
+    <>
+      {/* ── Intro · N° 01 ───────────────────────────────────────── */}
+      <section className="max-w-[1240px] mx-auto px-[52px] pt-[132px] pb-[82px] max-[880px]:pt-[90px] max-[880px]:pb-[60px] max-[720px]:px-6">
+        <div className="max-w-[760px] mx-auto flex flex-col items-center text-center">
+          <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
+            N° 01 — The Five
           </div>
-          <Link
-            href="/collections"
-            className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group flex-shrink-0"
+          <h2
+            className="font-serif font-light text-ink m-0"
+            style={{ fontSize: "clamp(36px, 4.4vw, 60px)", lineHeight: 1.04, letterSpacing: "-0.01em" }}
           >
-            All fragrances{" "}
-            <span className="inline-block transition-transform duration-[240ms] group-hover:translate-x-1">
-              <ArrowRightIcon />
-            </span>
-          </Link>
-        </div>
-
-        {/* Two equal columns — desktop. 80px gutter, single offset on the right column. */}
-        <div className="hidden min-[880px]:grid grid-cols-2 gap-x-[80px] items-start">
-          <div className="flex flex-col gap-y-[110px]">
-            {left.map((p) => (
-              <ProductCard key={p.id} p={p} nameClass="text-[32px]" />
-            ))}
-          </div>
-          <div className="flex flex-col gap-y-[110px] mt-[120px]">
-            {right.map((p) => (
-              <ProductCard key={p.id} p={p} nameClass="text-[32px]" />
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile — 2 col grid */}
-        <div className="min-[880px]:hidden grid grid-cols-2 gap-x-4 gap-y-10">
-          {PRODUCTS.map((p, i) => (
-            <div
-              key={p.id}
-              className={
-                i === PRODUCTS.length - 1 && PRODUCTS.length % 2 !== 0
-                  ? "col-span-2 justify-self-center w-[calc(50%-8px)]"
-                  : ""
-              }
+            Compositions, in order of intensity.
+          </h2>
+          <p className="font-body text-[19px] leading-[1.6] text-ink-2 mt-[30px] max-w-[560px]">
+            Five fragrances. Three collections. Composed slowly, from botanicals
+            chosen for their patience.
+          </p>
+          <div className="flex items-center gap-[30px] mt-[42px] flex-wrap justify-center">
+            <Link
+              href="/collections"
+              className="font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border border-ink rounded-full px-9 py-4 transition-colors duration-300 hover:bg-ink hover:text-cream"
             >
-              <ProductCard p={p} nameClass="text-[24px]" />
+              Explore Fragrances
+            </Link>
+            <Link
+              href="/about"
+              className="font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
+            >
+              The Maison
+              <span className="text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Credentials row */}
+        <div className="mt-[132px] max-[880px]:mt-[80px] border-t border-b border-line grid grid-cols-4 max-[640px]:grid-cols-2">
+          {CREDENTIALS.map((c, i) => (
+            <div
+              key={c}
+              className={[
+                "py-[26px] px-2 text-center font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-ink-2",
+                i === 0 ? "" : "border-l border-line",
+                i === 2 ? "max-[640px]:border-l-0 max-[640px]:border-t max-[640px]:border-line" : "",
+                i === 3 ? "max-[640px]:border-t max-[640px]:border-line" : "",
+              ].join(" ")}
+            >
+              {c}
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ── Product grid + feature ──────────────────────────────── */}
+      <section className="max-w-[1240px] mx-auto px-[52px] pb-[132px] max-[880px]:pb-[90px] max-[720px]:px-6">
+        <div className="grid grid-cols-2 gap-y-[72px] gap-x-[60px] max-[720px]:gap-x-6 max-[720px]:gap-y-[50px]">
+          {grid.map((p) => (
+            <GridCard key={p.id} p={p} />
+          ))}
+        </div>
+
+        {/* Feature — the fifth fragrance */}
+        <div className="grid grid-cols-2 gap-16 items-center mt-[72px] pt-[72px] border-t border-line max-[880px]:grid-cols-1 max-[880px]:gap-10 max-[880px]:mt-[60px] max-[880px]:pt-[60px]">
+          <Link href={`/products/${feature.id}`} className="featured-card overflow-hidden block">
+            <div className="featured-art-inner">
+              <Placeholder
+                src={img(`product/${feature.id}/main`)}
+                alt={feature.name}
+                kind={kindForCollection(feature.collection)}
+                label={`bottle · ${feature.id}`}
+                code={`N° ${feature.no}`}
+                ratio="1 / 1"
+              />
+            </div>
+          </Link>
+          <div className="flex flex-col items-start">
+            <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label">
+              N° {feature.no} · {feature.family}
+            </div>
+            <h3
+              className="font-serif font-light text-ink mt-[18px] mb-0"
+              style={{ fontSize: "clamp(40px, 4.6vw, 58px)", lineHeight: 1 }}
+            >
+              {feature.name}
+            </h3>
+            <div className="mt-[18px] flex items-baseline gap-[18px]">
+              <span className="font-sans text-[16px] tracking-[0.03em] text-ink-2">€{feature.price}</span>
+              <span className="font-sans font-medium text-[10px] uppercase tracking-[0.18em] text-muted">
+                {feature.volume.toUpperCase()}
+              </span>
+            </div>
+            <Link
+              href={`/products/${feature.id}`}
+              className="mt-[34px] font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
+            >
+              Discover
+              <span className="text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
