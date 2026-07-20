@@ -5,12 +5,12 @@ import { COLLECTIONS, productsIn } from "@/lib/data";
 import { img } from "@/lib/images";
 
 function Band({ c }: { c: Collection }) {
-  const src = img(`collection-editorial/${c.id}`);
+  const src = img(`collection-header/${c.id}`) ?? img(`collection-editorial/${c.id}`);
   const count = productsIn(c.id).length;
   return (
     <Link href={`/collections/${c.id}`} className="block group">
       <div
-        className="relative w-full overflow-hidden h-[48vh] min-h-[380px]"
+        className="relative w-full overflow-hidden aspect-[3/1] min-h-[380px] max-h-[75vh]"
         style={{ boxShadow: "inset 0 0 140px rgba(0,0,0,.30)" }}
       >
         {src ? (
@@ -19,7 +19,9 @@ function Band({ c }: { c: Collection }) {
             alt={c.name}
             fill
             sizes="100vw"
-            className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+            className={`object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03] ${
+              c.id === "nocturnes" ? "object-[50%_38%]" : ""
+            }`}
           />
         ) : (
           <div className="absolute inset-0" style={{ background: c.palette }} />

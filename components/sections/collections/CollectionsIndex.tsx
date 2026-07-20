@@ -92,7 +92,7 @@ export function CollectionsIndex() {
                 src={img(`collection-editorial/${c.id}`)}
                 alt={`${c.name} editorial`}
                 kind={kindForCollection(c.id)}
-                ratio="3/4"
+                ratio="1"
                 label={`${c.name.toLowerCase()} editorial`}
                 code={`PL ${String(i + 1).padStart(2, "0")}`}
               />

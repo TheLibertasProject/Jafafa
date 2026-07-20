@@ -19,10 +19,11 @@ export const IMAGES: Record<string, string> = {
   "collection-editorial/nocturnes": "/images/collections/nocturnes-editorial-wide.jpg",
   "collection-editorial/idylls":    "/images/collections/idylls-editorial-wide.jpg",
 
-  // Collection headers
-  // "collection-header/solaires":  "/images/collections/solaires-header.jpg",
-  // "collection-header/nocturnes": "/images/collections/nocturnes-header.jpg",
-  // "collection-header/idylls":    "/images/collections/idylls-header.jpg",
+  // Collection headers: banner-specific masters (bottle sits small in a wide
+  // panorama) so the full-width home bands keep whole bottles at any width.
+  "collection-header/solaires":  "/images/collections/solaires-band.jpg",
+  "collection-header/nocturnes": "/images/collections/nocturnes-band.jpg",
+  "collection-header/idylls":    "/images/collections/idylls-band.jpg",
 
   // Products
   // Glory's studio shot leads; the bottle stamped "GLORY 1927" (which
