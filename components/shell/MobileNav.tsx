@@ -9,8 +9,9 @@ import { AnimatePresence, motion } from "framer-motion";
 const ITEMS = [
   { label: "Collections", num: "01", href: "/collections" },
   { label: "About", num: "02", href: "/about" },
-  { label: "Journal", num: "03", href: "/about" },
-  { label: "Stockists", num: "04", href: "/about" },
+  { label: "Journal", num: "03", href: "/journal" },
+  { label: "Stockists", num: "04", href: "/stockists" },
+  { label: "Book a visit", num: "05", href: "/book-visit" },
 ];
 
 export function MobileNav() {

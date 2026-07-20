@@ -85,10 +85,10 @@ export function CollectionDetail({ id }: { id: string }) {
 
   const perfumerQuote =
     id === "solaires"
-      ? `"We wanted these to wear like sunlight on linen — present, but never insisting. The whole series is meant to be reapplied without thought."`
+      ? `"We wanted these to wear like sunlight on linen: present, but never insisting. The whole series is meant to be reapplied without thought."`
       : id === "nocturnes"
       ? `"Nocturnes are the ones we wear for ourselves, late, with no audience. The oud took eleven years to find. The wait was the point."`
-      : `"Idylls are pastorals — places we imagine more than visit. Fairy Garden is the smallest thing we make, and the one we are most fond of."`;
+      : `"Idylls are pastorals: places we imagine more than visit. Fairy Garden is the smallest thing we make, and the one we are most fond of."`;
 
   return (
     <main className="page-enter">
@@ -169,7 +169,7 @@ export function CollectionDetail({ id }: { id: string }) {
               {perfumerQuote}
             </p>
             <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mt-6">
-              — L. Audemars & M. Aaltonen
+              L. Audemars & M. Aaltonen
             </div>
           </div>
         </div>

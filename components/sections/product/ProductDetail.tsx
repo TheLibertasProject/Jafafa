@@ -28,7 +28,7 @@ function Crumbs({ items }: { items: Array<{ label: string; href?: string }> }) {
   );
 }
 
-function ScentPyramid({ product }: { product: Product }) {
+function ScentPyramid() {
   const bands = [
     { name: "TOP", color: "#4A5D3F", w: 70 },
     { name: "HEART", color: "#1A1A17", w: 130 },
@@ -259,7 +259,7 @@ export function ProductDetail({ id }: { id: string }) {
                 {added ? (
                   <><CheckIcon /> Added to bag</>
                 ) : (
-                  <>Add to bag — €{sizes[size].pr * qty}</>
+                  <>Add to bag · €{sizes[size].pr * qty}</>
                 )}
               </button>
             </div>
@@ -295,7 +295,7 @@ export function ProductDetail({ id }: { id: string }) {
 
           <div className="grid grid-cols-[220px_1fr] gap-[60px] items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]">
             <div className="max-[880px]:mx-auto">
-              <ScentPyramid product={product} />
+              <ScentPyramid />
             </div>
             <div className="grid gap-7">
               {(["top", "heart", "base"] as const).map((tier) => (

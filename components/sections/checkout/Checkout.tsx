@@ -163,7 +163,7 @@ export function Checkout() {
 
   const [confirmed, setConfirmed] = useState(false);
   const [placing, setPlacing] = useState(false);
-  const [orderNo] = useState(`JF-${Math.floor(10000 + Math.random() * 90000)}`);
+  const [orderNo] = useState(() => `JF-${Math.floor(10000 + Math.random() * 90000)}`);
 
   const [form, setForm] = useState({
     firstName: "", lastName: "",

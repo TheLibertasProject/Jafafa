@@ -319,7 +319,7 @@ export function BookVisit() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [confirmed, setConfirmed] = useState(false);
   const [placing, setPlacing] = useState(false);
-  const [refNo] = useState(`JF-V-${Math.floor(10000 + Math.random() * 90000)}`);
+  const [refNo] = useState(() => `JF-V-${Math.floor(10000 + Math.random() * 90000)}`);
 
   const [form, setForm] = useState({
     firstName: "", lastName: "", email: "", phone: "",
@@ -471,12 +471,12 @@ export function BookVisit() {
                       </div>
                       <div className="flex flex-wrap gap-[8px]">
                         {group.slots.map((slot) => {
-                          const isSelected = selectedTime === `${slot.time} — ${slot.label}`;
+                          const isSelected = selectedTime === `${slot.time} · ${slot.label}`;
                           return (
                             <button
                               key={slot.time}
                               disabled={!slot.available}
-                              onClick={() => slot.available && setSelectedTime(`${slot.time} — ${slot.label}`)}
+                              onClick={() => slot.available && setSelectedTime(`${slot.time} · ${slot.label}`)}
                               className={[
                                 "h-[42px] px-4 rounded-[4px] border font-mono text-[11px] tracking-[0.1em] transition-all duration-[180ms]",
                                 isSelected

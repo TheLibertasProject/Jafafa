@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import aboutPhoto from "@/public/images/about/about.jpeg";
 import meetingPhoto from "@/public/images/about/meeting.jpeg";
-import { Placeholder } from "@/components/ui/Placeholder";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 
 const TIMELINE = [
@@ -14,7 +13,7 @@ const TIMELINE = [
 ];
 
 const VALUES = [
-  { no: "N° 01", nm: "Botanical", dsc: "Every composition is built around a living botanical — distilled, infused, or fractioned. No molecules pretending to be flowers." },
+  { no: "N° 01", nm: "Botanical", dsc: "Every composition is built around a living botanical: distilled, infused, or fractioned. No molecules pretending to be flowers." },
   { no: "N° 02", nm: "Patient", dsc: "Some materials are aged three winters before they reach the bench. We make small editions and wait without apology." },
   { no: "N° 03", nm: "Sourced direct", dsc: "From single cooperatives where possible. We visit annually, we pay above the syndicate rate, and we publish our partners every spring." },
   { no: "N° 04", nm: "Refillable", dsc: "Every bottle is refillable at the maison or by post. Glass is heavy and we have made peace with that." },
@@ -70,14 +69,14 @@ export function About() {
           </div>
           <div className="about-prose text-[17px] leading-[1.8] text-ink-2 max-w-[52ch]">
             <p>
-              Jafafa began as a notebook between two friends — pressed leaves,
+              Jafafa began as a notebook between two friends: pressed leaves,
               a date, weather. Compositions came later, sometimes by years.
               The first bottle of <em>Glory</em> was filled in a kitchen in Helsinki
               on a March afternoon; the iris had been waiting for three winters.
             </p>
             <p>
               We work in editions of two thousand. When a fragrance sells out, we
-              wait — sometimes a season, sometimes a year — until the ingredients
+              wait, sometimes a season, sometimes a year, until the ingredients
               meet us again. Patience is the only material we have in abundance.
             </p>
             <p>
@@ -107,7 +106,7 @@ export function About() {
       </section>
 
       {/* Perfumers */}
-      <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
+      <section id="perfumers" className="scroll-mt-24 w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         <div
           className="grid grid-cols-[2fr_3fr] gap-[60px] py-20 items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]"
         >
@@ -132,10 +131,10 @@ export function About() {
               week, eventually.
             </p>
             <Link
-              href="/"
+              href="/journal"
               className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group"
             >
-              The full biography{" "}
+              Read their notebook{" "}
               <span className="inline-block transition-transform duration-[240ms] group-hover:translate-x-1">
                 <ArrowRightIcon />
               </span>

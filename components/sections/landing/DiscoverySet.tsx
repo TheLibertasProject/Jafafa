@@ -26,7 +26,7 @@ export function DiscoverySet() {
       <div className="w-full">
         <Placeholder
           src={img("product/discovery-set/main")}
-          alt="The Discovery Set — five hand-decanted vials"
+          alt="The Discovery Set: five hand-decanted vials"
           label="discovery set"
           code="N° DS"
           ratio="16 / 10"
@@ -34,7 +34,7 @@ export function DiscoverySet() {
       </div>
 
       <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mt-11 mb-[22px]">
-        N° DS — For the Curious
+        N° DS · For the Curious
       </div>
       <h2
         className="font-serif font-light text-ink m-0"
@@ -61,7 +61,7 @@ export function DiscoverySet() {
             <CheckIcon /> Added to Bag
           </>
         ) : (
-          <>Add to Bag — €38</>
+          <>Add to Bag · €38</>
         )}
       </button>
       <div className="mt-[22px] font-sans font-medium text-[10px] uppercase tracking-[0.2em] text-muted">

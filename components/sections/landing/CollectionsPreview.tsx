@@ -56,7 +56,7 @@ export function CollectionsPreview() {
         <div className="flex justify-between items-end gap-8 flex-wrap">
           <div>
             <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-6">
-              N° 03 — Series
+              N° 03 · Series
             </div>
             <h2
               className="font-serif font-light text-ink m-0 max-w-[11ch]"

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = getProduct(id);
   if (!product) return { title: "Not Found" };
   return {
-    title: `${product.name} — Jafafa · Olfactive Botanicals`,
+    title: `${product.name} · Jafafa · Olfactive Botanicals`,
     description: product.description,
   };
 }

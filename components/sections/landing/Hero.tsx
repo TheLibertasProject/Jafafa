@@ -10,11 +10,11 @@ export function Hero() {
       {HERO_SRC ? (
         <Image
           src={HERO_SRC}
-          alt="Maison Jafafa — the garden, distilled"
+          alt="Maison Jafafa: the garden, distilled"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover max-[720px]:object-[30%_center]"
         />
       ) : (
         <div
@@ -25,6 +25,17 @@ export function Hero() {
           }}
         />
       )}
+
+      {/* Film grain: masks upscale softness on very wide screens (source art is 1024px) */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none opacity-[0.07] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          backgroundSize: "240px 240px",
+        }}
+      />
 
       {/* Top-down darkening wash */}
       <div
@@ -55,17 +66,6 @@ export function Hero() {
         >
           The garden, distilled.
         </h1>
-        <div
-          className="reveal font-sans font-medium text-[12px] uppercase mt-[34px]"
-          style={{
-            letterSpacing: "0.52em",
-            paddingLeft: "0.52em",
-            color: "rgba(245,238,226,.72)",
-            animationDelay: "0.28s",
-          }}
-        >
-          Jafafa
-        </div>
       </div>
     </section>
   );

@@ -118,7 +118,7 @@ export const DISCOVERY_SET: Product = {
   volume: "5 × 2ml",
   collection: "",
   description:
-    "All five fragrances in 2ml hand-decanted vials, posted in a linen-wrapped box with a letter from the perfumer.",
+    "All five fragrances in 2ml hand-decanted vials, posted in a small wooden box with a letter from the perfumer.",
   perfumer: "L. Audemars & M. Aaltonen",
   notes: { top: [], heart: [], base: [] },
   intensity: 0,
@@ -133,7 +133,7 @@ export const COLLECTIONS: Collection[] = [
     no: "I",
     tagline: "Light, held.",
     description:
-      "Compositions of warmth and openness — resin, citrus pith, white flowers in midday sun. For wearing into the bright hours.",
+      "Compositions of warmth and openness: resin, citrus pith, white flowers in midday sun. For wearing into the bright hours.",
     palette: "#C9A87C",
     products: ["glory", "floral-frenzy"],
   },
@@ -143,7 +143,7 @@ export const COLLECTIONS: Collection[] = [
     no: "II",
     tagline: "Heat after dark.",
     description:
-      "Studies in shadow and resonance — oud, smoked amber, midnight jasmine. Worn when the room has been lit by lamps for some time.",
+      "Studies in shadow and resonance: oud, smoked amber, midnight jasmine. Worn when the room has been lit by lamps for some time.",
     palette: "#1A1A17",
     products: ["midnight-sun", "oud-opulence"],
   },
@@ -153,7 +153,7 @@ export const COLLECTIONS: Collection[] = [
     no: "III",
     tagline: "Green, imagined.",
     description:
-      "Pastorals from places that may not exist — moss, violet leaf, the cool side of a fig. The smallest, quietest of the three series.",
+      "Pastorals from places that may not exist: moss, violet leaf, the cool side of a fig. The smallest, quietest of the three series.",
     palette: "#4A5D3F",
     products: ["fairy-garden"],
   },

@@ -52,7 +52,7 @@ export function FeaturedFragrances() {
       <section className="max-w-[1240px] mx-auto px-[52px] pt-[132px] pb-[82px] max-[880px]:pt-[90px] max-[880px]:pb-[60px] max-[720px]:px-6">
         <div className="max-w-[760px] mx-auto flex flex-col items-center text-center">
           <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
-            N° 01 — The Five
+            N° 01 · The Five
           </div>
           <h2
             className="font-serif font-light text-ink m-0"

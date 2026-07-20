@@ -23,13 +23,13 @@ export function EditorialSplit() {
           {/* Text */}
           <div className="flex-1 min-w-0">
             <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
-              N° 02 — The Method
+              N° 02 · The Method
             </div>
             <h2
               className="font-serif font-light text-ink m-0 mb-8"
               style={{ fontSize: "clamp(30px, 3.4vw, 46px)", lineHeight: 1.12, letterSpacing: "-0.005em" }}
             >
-              We compose the way a botanist writes a letter—slowly, and from life.
+              We compose the way a botanist writes a letter: slowly, and from life.
             </h2>
             <p className="font-body text-[17.5px] leading-[1.72] text-ink-2 m-0 mb-5">
               Each Jafafa fragrance begins in a notebook: pressed leaves, a date,

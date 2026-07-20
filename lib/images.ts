@@ -10,10 +10,13 @@ export const IMAGES: Record<string, string> = {
   "landing/hero":    "/images/landing/main.jpeg",
   // "landing/discovery": "/images/landing/discovery-set.jpg",
 
-  // Collection editorials
-  "collection-editorial/solaires": "/images/collections/solaires-editiorial.jpeg",
-  "collection-editorial/nocturnes": "/images/collections/nocturne-editorial.jpeg",
-  "collection-editorial/idylls":    "/images/collections/idylls-editorial.jpeg",
+  // Collection editorials.
+  // Swapped 20 Jul 2026: the original AI editorials showed ~15 fragrances the
+  // maison does not make; each collection now leads with a scene from one of
+  // its own members, so every bottle on the site is one of the real five.
+  "collection-editorial/solaires": "/images/products/floral-frenzy/floral-frenzy-3.jpeg",
+  "collection-editorial/nocturnes": "/images/products/midnight-sun/midnight-sun-2.jpeg",
+  "collection-editorial/idylls":    "/images/products/fairy-garden/fairy-garden-3.jpeg",
 
   // Collection headers
   // "collection-header/solaires":  "/images/collections/solaires-header.jpg",
@@ -21,10 +24,12 @@ export const IMAGES: Record<string, string> = {
   // "collection-header/idylls":    "/images/collections/idylls-header.jpg",
 
   // Products
-  "product/glory/main": "/images/products/glory/glory.jpeg",
+  // Glory's studio shot leads; the bottle stamped "GLORY 1927" (which
+  // contradicts est. MMXIX) sits last in the gallery as an archive curio.
+  "product/glory/main": "/images/products/glory/glory-3.jpeg",
   "product/glory/1":    "/images/products/glory/glory-1.jpeg",
   "product/glory/2":    "/images/products/glory/glory-2.jpeg",
-  "product/glory/3":    "/images/products/glory/glory-3.jpeg",
+  "product/glory/3":    "/images/products/glory/glory.jpeg",
 
   "product/midnight-sun/main": "/images/products/midnight-sun/midnight-sun.jpeg",
   "product/midnight-sun/1":    "/images/products/midnight-sun/midnight-sun-1.jpeg",

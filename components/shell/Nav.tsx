@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useStore } from "@/lib/store";
-import { SearchIcon, UserIcon, BagIcon } from "@/components/ui/Icons";
+import { SearchIcon, BagIcon } from "@/components/ui/Icons";
 
 export function Nav() {
   const openCart = useStore((s) => s.openCart);
@@ -48,11 +48,8 @@ export function Nav() {
 
         {/* Right — utilities */}
         <div className="flex items-center justify-end gap-[22px] text-ink justify-self-end max-[520px]:gap-4">
-          <Link href="/collections" aria-label="Search" className="inline-flex">
+          <Link href="/search" aria-label="Search" className="inline-flex">
             <SearchIcon width={17} height={17} />
-          </Link>
-          <Link href="/about" aria-label="Account" className="inline-flex max-[520px]:hidden">
-            <UserIcon width={17} height={17} />
           </Link>
           <button onClick={openCart} aria-label="Bag" className="relative inline-flex cursor-pointer">
             <BagIcon width={17} height={17} />

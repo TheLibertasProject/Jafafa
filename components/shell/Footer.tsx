@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterForm } from "@/components/shell/NewsletterForm";
 
 const COLUMNS: { head: string; links: { label: string; href: string }[] }[] = [
   {
@@ -8,26 +9,27 @@ const COLUMNS: { head: string; links: { label: string; href: string }[] }[] = [
       { label: "Solaires", href: "/collections/solaires" },
       { label: "Nocturnes", href: "/collections/nocturnes" },
       { label: "Idylls", href: "/collections/idylls" },
-      { label: "Discovery set", href: "/collections" },
+      { label: "Discovery set", href: "/discovery-set" },
     ],
   },
   {
     head: "Maison",
     links: [
       { label: "Our story", href: "/about" },
-      { label: "The perfumers", href: "/about" },
-      { label: "Sourcing", href: "/about" },
-      { label: "Stockists", href: "/about" },
-      { label: "Press", href: "/about" },
+      { label: "The perfumers", href: "/about#perfumers" },
+      { label: "Journal", href: "/journal" },
+      { label: "Sourcing", href: "/sourcing" },
+      { label: "Stockists", href: "/stockists" },
+      { label: "Press", href: "/press" },
     ],
   },
   {
     head: "Service",
     links: [
-      { label: "Contact", href: "/about" },
-      { label: "Shipping & returns", href: "/about" },
-      { label: "Care guide", href: "/about" },
-      { label: "FAQ", href: "/about" },
+      { label: "Contact", href: "/contact" },
+      { label: "Shipping & returns", href: "/shipping-returns" },
+      { label: "Care guide", href: "/care-guide" },
+      { label: "FAQ", href: "/faq" },
       { label: "Book a visit", href: "/book-visit" },
     ],
   },
@@ -52,14 +54,7 @@ export function Footer() {
             <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label mb-4">
               Letters, twice a year.
             </div>
-            <div className="flex items-center gap-3 border-b border-ink pb-[11px] max-w-[320px]">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="flex-1 bg-transparent border-0 outline-none font-body text-[15px] text-ink placeholder:text-muted"
-              />
-              <span className="text-ink text-[16px] cursor-pointer">→</span>
-            </div>
+            <NewsletterForm />
           </div>
 
           {/* Link columns */}

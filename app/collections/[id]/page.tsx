@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const collection = getCollection(id);
   if (!collection) return { title: "Not Found" };
   return {
-    title: `${collection.name} — Jafafa · Olfactive Botanicals`,
+    title: `${collection.name} · Jafafa · Olfactive Botanicals`,
     description: collection.description,
   };
 }
