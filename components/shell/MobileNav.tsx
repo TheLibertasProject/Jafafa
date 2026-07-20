@@ -27,15 +27,37 @@ export function MobileNav() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeMenu(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, closeMenu]);
+
   return (
     <AnimatePresence>
       {open && (
         <motion.div
+          key="mnav-scrim"
+          className="fixed inset-0 z-[80]"
+          style={{ background: "rgba(20, 14, 8, 0.32)" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          onClick={closeMenu}
+        />
+      )}
+      {open && (
+        <motion.div
           key="mnav"
-          className="fixed inset-0 z-[80] bg-cream flex flex-col"
-          initial={{ y: "-100%" }}
-          animate={{ y: 0 }}
-          exit={{ y: "-100%" }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+          className="fixed inset-y-0 left-0 z-[81] w-[min(100vw,420px)] bg-cream flex flex-col border-r border-line"
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
           transition={{ duration: 0.38, ease: [0.6, 0.05, 0.2, 1] }}
         >
           {/* Head */}
