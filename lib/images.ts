@@ -11,12 +11,13 @@ export const IMAGES: Record<string, string> = {
   // "landing/discovery": "/images/landing/discovery-set.jpg",
 
   // Collection editorials.
-  // Swapped 20 Jul 2026: the original AI editorials showed ~15 fragrances the
-  // maison does not make; each collection now leads with a scene from one of
-  // its own members, so every bottle on the site is one of the real five.
-  "collection-editorial/solaires": "/images/products/floral-frenzy/floral-frenzy-3.jpeg",
-  "collection-editorial/nocturnes": "/images/products/midnight-sun/midnight-sun-2.jpeg",
-  "collection-editorial/idylls":    "/images/products/fairy-garden/fairy-garden-3.jpeg",
+  // 20 Jul 2026: the original AI editorials showed ~15 fragrances the maison
+  // does not make. Replaced with 1536x1024 landscape scenes outpainted
+  // (gpt-image-1) from each collection's own member product photography, so
+  // full bottles survive every crop (3/4 index cards, 5/4 detail, home bands).
+  "collection-editorial/solaires": "/images/collections/solaires-editorial-wide.jpg",
+  "collection-editorial/nocturnes": "/images/collections/nocturnes-editorial-wide.jpg",
+  "collection-editorial/idylls":    "/images/collections/idylls-editorial-wide.jpg",
 
   // Collection headers
   // "collection-header/solaires":  "/images/collections/solaires-header.jpg",
