@@ -82,17 +82,17 @@ export function MobileNav() {
                 className="flex justify-between items-baseline py-[18px] border-b border-line-soft font-serif text-[32px] font-light"
               >
                 <span>{item.label}</span>
-                <span className="font-mono text-[10px] tracking-[0.18em] text-muted">{item.num}</span>
+                <span className="font-mono text-[12px] md:text-[10px] tracking-[0.18em] text-muted">{item.num}</span>
               </Link>
             ))}
           </nav>
 
           {/* Footer */}
           <div className="px-5 pb-7 mt-auto border-t border-line-soft pt-[18px]">
-            <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">
+            <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">
               Maison Jafafa · est. 2019
             </div>
-            <div className="flex gap-4 mt-3 font-mono text-[11px] tracking-[0.14em] uppercase text-muted">
+            <div className="flex gap-4 mt-3 font-mono text-[13px] md:text-[11px] tracking-[0.14em] uppercase text-muted">
               <span>EN</span><span>·</span><span>EUR €</span>
             </div>
           </div>

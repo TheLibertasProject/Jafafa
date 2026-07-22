@@ -6,7 +6,7 @@ import { img } from "@/lib/images";
 function Crumbs({ items }: { items: Array<{ label: string; href?: string }> }) {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         {items.map((c, i) => (
           <span key={i} className="flex items-center gap-[10px]">
             {i > 0 && <span className="opacity-50">/</span>}
@@ -29,7 +29,7 @@ export function CollectionsIndex() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[60px] pb-20">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">
           Three series · Five compositions
         </div>
         <h1
@@ -56,12 +56,12 @@ export function CollectionsIndex() {
                 href={`/collections/${c.id}`}
                 className="coll-row grid grid-cols-[90px_1.4fr_1fr_1fr_auto] gap-10 py-9 border-b border-line-soft cursor-pointer relative block max-[880px]:grid-cols-1 max-[880px]:gap-2 max-[880px]:py-6"
               >
-                <span className="font-mono text-[11px] tracking-[0.18em] text-muted">SER. {c.no}</span>
+                <span className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] text-muted">SER. {c.no}</span>
                 <span className="font-serif text-[56px] font-light leading-none tracking-[-0.01em] max-[880px]:text-[40px]">
                   {c.name}
                 </span>
                 <span className="font-serif italic text-ink-2 text-[22px]">{c.tagline}</span>
-                <span className="font-mono text-[11px] tracking-[0.16em] uppercase text-muted">
+                <span className="font-mono text-[13px] md:text-[11px] tracking-[0.16em] uppercase text-muted">
                   {products.length} {products.length === 1 ? "fragrance" : "fragrances"}
                 </span>
                 <div className="grid gap-[6px] w-[156px] max-[880px]:hidden" style={{ gridTemplateColumns: "48px 48px 48px" }}>

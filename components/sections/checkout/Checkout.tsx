@@ -27,7 +27,7 @@ function LockIcon() {
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Checkout</span>
@@ -39,7 +39,7 @@ function Crumbs() {
 function SectionHead({ step, title }: { step: string; title: string }) {
   return (
     <div className="flex items-baseline gap-4 mb-6">
-      <span className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-muted">{step}</span>
+      <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.2em] uppercase text-muted">{step}</span>
       <h2 className="font-serif font-light text-[28px] leading-none">{title}</h2>
     </div>
   );
@@ -66,7 +66,7 @@ function Field({
 }: FieldProps) {
   return (
     <div className={className}>
-      <label htmlFor={id} className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+      <label htmlFor={id} className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
         {label}{required && <span className="ml-[3px] text-ink-2">*</span>}
       </label>
       <div className="relative">
@@ -80,7 +80,7 @@ function Field({
           maxLength={maxLength}
           onChange={(e) => onChange(e.target.value)}
           className={[
-            "w-full border border-line bg-paper/70 px-[14px] h-[46px] text-[14px] text-ink rounded-[4px]",
+            "w-full border border-line bg-paper/70 px-[14px] h-[46px] text-[15.5px] md:text-[14px] text-ink rounded-[4px]",
             "focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50",
             mono ? "font-mono tracking-[0.12em] placeholder:font-mono" : "font-sans",
           ].join(" ")}
@@ -106,7 +106,7 @@ function EmptyCart() {
         </p>
         <Link
           href="/collections"
-          className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors"
+          className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors"
         >
           Begin browsing
           <span className="group-hover:translate-x-1 transition-transform duration-[240ms]"><ArrowRightIcon /></span>
@@ -124,7 +124,7 @@ function Confirmed({ orderNo }: { orderNo: string }) {
           <div className="w-10 h-10 rounded-full border border-sage flex items-center justify-center text-sage mb-10">
             <CheckIcon />
           </div>
-          <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted mb-4">
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.2em] uppercase text-muted mb-4">
             Order {orderNo}
           </div>
           <h1 className="font-serif font-light leading-[0.92] mb-6" style={{ fontSize: "clamp(48px,6vw,88px)" }}>
@@ -133,12 +133,12 @@ function Confirmed({ orderNo }: { orderNo: string }) {
           <p className="text-[16px] leading-[1.7] text-ink-2 max-w-[44ch] mb-2">
             Your fragrances are being prepared with care. A confirmation has been sent to your email.
           </p>
-          <p className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mb-12">
+          <p className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted mb-12">
             Estimated delivery · 3–5 business days
           </p>
           <Link
             href="/collections"
-            className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors"
+            className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors"
           >
             Continue browsing
             <span className="group-hover:translate-x-1 transition-transform duration-[240ms]"><ArrowRightIcon /></span>
@@ -198,7 +198,7 @@ export function Checkout() {
 
         {/* Page heading */}
         <div className="pt-[28px] pb-12 border-b border-line-soft">
-          <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted mb-3">
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.2em] uppercase text-muted mb-3">
             Jafafa · Olfactive Botanicals
           </div>
           <h1
@@ -217,7 +217,7 @@ export function Checkout() {
 
           {/* ── LEFT: Cart items ─────────────────────────────── */}
           <div className="sticky top-[100px] max-[880px]:static">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted mb-7">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted mb-7">
               Your selection · {items.reduce((s, i) => s + i.qty, 0)}{" "}
               {items.reduce((s, i) => s + i.qty, 0) === 1 ? "item" : "items"}
             </div>
@@ -240,17 +240,17 @@ export function Checkout() {
                       ratio="4/5"
                     />
                     <div>
-                      <div className="font-mono text-[10px] tracking-[0.16em] uppercase text-muted">
+                      <div className="font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted">
                         N° {p.no}
                       </div>
                       <div className="font-serif text-[24px] leading-none mt-[5px] mb-[6px]">
                         {p.name}
                       </div>
-                      <div className="font-mono text-[10.5px] tracking-[0.12em] uppercase text-muted mb-4">
+                      <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.12em] uppercase text-muted mb-4">
                         {p.family} · {p.volume} · Eau de Parfum
                       </div>
                       <div className="flex items-center justify-between">
-                        <div className="inline-flex items-center border border-line rounded-full font-mono text-[11px] tracking-[0.1em]">
+                        <div className="inline-flex items-center border border-line rounded-full font-mono text-[13px] md:text-[11px] tracking-[0.1em]">
                           <button
                             className="py-[6px] px-[10px]"
                             onClick={() => setQty(p.id, item.qty - 1)}
@@ -270,7 +270,7 @@ export function Checkout() {
                           </button>
                         </div>
                         <div className="flex items-center gap-[18px]">
-                          <span className="font-mono text-[13px] tracking-[0.06em]">
+                          <span className="font-mono text-[14.5px] md:text-[13px] tracking-[0.06em]">
                             €{p.price * item.qty}
                           </span>
                           <button
@@ -291,7 +291,7 @@ export function Checkout() {
             <div className="mt-7">
               <Link
                 href="/collections"
-                className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group text-muted hover:text-ink transition-colors"
+                className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group text-muted hover:text-ink transition-colors"
               >
                 Continue browsing
                 <span className="group-hover:translate-x-1 transition-transform duration-[240ms]">
@@ -344,7 +344,7 @@ export function Checkout() {
                 </div>
                 {/* Country select */}
                 <div>
-                  <label htmlFor="country" className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+                  <label htmlFor="country" className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
                     Country <span className="ml-[3px] text-ink-2">*</span>
                   </label>
                   <div className="relative">
@@ -352,7 +352,7 @@ export function Checkout() {
                       id="country"
                       value={form.country}
                       onChange={(e) => set("country")(e.target.value)}
-                      className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] appearance-none cursor-pointer"
+                      className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] appearance-none cursor-pointer"
                     >
                       {COUNTRIES.map((c) => (
                         <option key={c} value={c}>{c}</option>
@@ -429,7 +429,7 @@ export function Checkout() {
                 />
               </div>
 
-              <div className="flex items-center gap-[7px] mt-4 font-mono text-[10px] tracking-[0.12em] uppercase text-muted">
+              <div className="flex items-center gap-[7px] mt-4 font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted">
                 <LockIcon />
                 <span>256-bit SSL encryption · PCI DSS compliant</span>
               </div>
@@ -437,7 +437,7 @@ export function Checkout() {
 
             {/* — Order summary + CTA — */}
             <div className="border-t border-line pt-8">
-              <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted mb-5">
+              <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted mb-5">
                 Order summary
               </div>
 
@@ -451,12 +451,12 @@ export function Checkout() {
                       <span className="font-serif text-[17px] text-ink-2 leading-none">
                         {p.name}
                         {item.qty > 1 && (
-                          <span className="font-mono text-[10px] tracking-[0.1em] uppercase ml-[6px] text-muted">
+                          <span className="font-mono text-[12px] md:text-[10px] tracking-[0.1em] uppercase ml-[6px] text-muted">
                             × {item.qty}
                           </span>
                         )}
                       </span>
-                      <span className="font-mono text-[12px] tracking-[0.06em] shrink-0">
+                      <span className="font-mono text-[13.5px] md:text-[12px] tracking-[0.06em] shrink-0">
                         €{p.price * item.qty}
                       </span>
                     </div>
@@ -466,17 +466,17 @@ export function Checkout() {
 
               {/* Cost breakdown */}
               <div className="border-t border-line-soft pt-4 grid gap-[8px]">
-                <div className="flex justify-between items-baseline font-mono text-[11px] tracking-[0.14em] uppercase">
+                <div className="flex justify-between items-baseline font-mono text-[13px] md:text-[11px] tracking-[0.14em] uppercase">
                   <span className="text-muted">Subtotal</span>
                   <span>€{subtotal}</span>
                 </div>
-                <div className="flex justify-between items-baseline font-mono text-[11px] tracking-[0.14em] uppercase">
+                <div className="flex justify-between items-baseline font-mono text-[13px] md:text-[11px] tracking-[0.14em] uppercase">
                   <span className="text-muted">Shipping</span>
                   <span className={shipping === 0 ? "text-sage" : ""}>
                     {shipping === 0 ? "Complimentary" : `€${shipping}`}
                   </span>
                 </div>
-                <div className="flex justify-between items-baseline font-mono text-[10px] tracking-[0.12em] uppercase text-muted/60">
+                <div className="flex justify-between items-baseline font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted/60">
                   <span>VAT</span>
                   <span>Included</span>
                 </div>
@@ -484,7 +484,7 @@ export function Checkout() {
 
               {/* Total */}
               <div className="flex justify-between items-baseline border-t border-line mt-5 pt-5 mb-6">
-                <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted">
+                <span className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted">
                   Total
                 </span>
                 <span className="font-serif text-[38px] leading-none">€{total}</span>
@@ -495,7 +495,7 @@ export function Checkout() {
                 onClick={handlePlace}
                 disabled={placing}
                 className={[
-                  "w-full h-[54px] rounded-[4px] border font-sans text-[13px] tracking-[0.1em] uppercase font-medium",
+                  "w-full h-[54px] rounded-[4px] border font-sans text-[14.5px] md:text-[13px] tracking-[0.1em] uppercase font-medium",
                   "cursor-pointer transition-all duration-[280ms] flex items-center justify-center gap-[12px]",
                   placing
                     ? "bg-sage border-sage text-cream cursor-default"
@@ -515,7 +515,7 @@ export function Checkout() {
                 )}
               </button>
 
-              <div className="flex items-center justify-center gap-2 mt-4 font-mono text-[10px] tracking-[0.12em] uppercase text-muted">
+              <div className="flex items-center justify-center gap-2 mt-4 font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted">
                 <LockIcon />
                 <span>Secure checkout · Free returns within 14 days</span>
               </div>

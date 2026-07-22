@@ -12,7 +12,7 @@ import type { Product } from "@/lib/types";
 function Crumbs({ items }: { items: Array<{ label: string; href?: string }> }) {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
         {items.map((c, i) => (
           <span key={i} className="flex items-center gap-[10px]">
             {i > 0 && <span className="opacity-50">/</span>}
@@ -103,7 +103,7 @@ export function ProductDetail({ id }: { id: string }) {
     return (
       <main className="page-enter w-full max-w-[1440px] mx-auto px-10 py-[120px]">
         <div className="font-serif font-light text-[64px]">Fragrance not found.</div>
-        <Link href="/collections" className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group">
+        <Link href="/collections" className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group">
           Back to fragrances <span className="group-hover:translate-x-1 transition-transform duration-[240ms]"><ArrowRightIcon /></span>
         </Link>
       </main>
@@ -184,7 +184,7 @@ export function ProductDetail({ id }: { id: string }) {
 
           {/* Right — Info */}
           <div className="pt-2">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">
               <Link href={`/collections/${collection.id}`} className="hover:text-ink transition-colors">
                 Series {collection.no} · {collection.name}
               </Link>
@@ -203,7 +203,7 @@ export function ProductDetail({ id }: { id: string }) {
             </p>
 
             {/* Meta strip */}
-            <div className="flex gap-6 flex-wrap font-mono text-[11px] tracking-[0.16em] uppercase text-ink-2 py-[14px] border-t border-line-soft border-b mb-7">
+            <div className="flex gap-6 flex-wrap font-mono text-[13px] md:text-[11px] tracking-[0.16em] uppercase text-ink-2 py-[14px] border-t border-line-soft border-b mb-7">
               <span className="flex gap-2 items-center">
                 <b className="font-medium text-ink">Family</b> · {product.family}
               </span>
@@ -218,7 +218,7 @@ export function ProductDetail({ id }: { id: string }) {
             <p className="text-[16px] leading-[1.7] text-ink-2 max-w-[52ch]">{product.description}</p>
 
             {/* Size picker */}
-            <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mt-8 mb-[10px]">Format</div>
+            <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted mt-8 mb-[10px]">Format</div>
             <div className="flex gap-2 mb-6">
               {sizes.map((s, i) => (
                 <button
@@ -227,7 +227,7 @@ export function ProductDetail({ id }: { id: string }) {
                   className={`flex-1 px-4 py-[14px] border rounded-[4px] text-left cursor-pointer transition-all duration-[200ms] ${i === size ? "border-ink bg-paper" : "border-line hover:border-ink"}`}
                 >
                   <span className="font-serif text-[22px] leading-none block">{s.vol}</span>
-                  <span className="font-mono text-[11px] tracking-[0.1em] text-muted mt-[6px] block">
+                  <span className="font-mono text-[13px] md:text-[11px] tracking-[0.1em] text-muted mt-[6px] block">
                     {s.sub} · €{s.pr}
                   </span>
                 </button>
@@ -237,7 +237,7 @@ export function ProductDetail({ id }: { id: string }) {
             {/* Add row */}
             <div className="grid gap-[10px] mb-2" style={{ gridTemplateColumns: "1fr 2fr" }}>
               {/* Qty */}
-              <div className="flex items-center justify-between border border-ink rounded-[4px] h-14 px-[10px] font-mono text-[11px] tracking-[0.1em]">
+              <div className="flex items-center justify-between border border-ink rounded-[4px] h-14 px-[10px] font-mono text-[13px] md:text-[11px] tracking-[0.1em]">
                 <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="py-0 px-[14px]" aria-label="Decrease">
                   <MinusIcon />
                 </button>
@@ -250,7 +250,7 @@ export function ProductDetail({ id }: { id: string }) {
               {/* Add button */}
               <button
                 onClick={handleAdd}
-                className={`h-14 rounded-[4px] border font-sans text-[13px] tracking-[0.08em] uppercase font-medium cursor-pointer transition-all duration-[240ms] flex items-center justify-center gap-[14px] ${
+                className={`h-14 rounded-[4px] border font-sans text-[14.5px] md:text-[13px] tracking-[0.08em] uppercase font-medium cursor-pointer transition-all duration-[240ms] flex items-center justify-center gap-[14px] ${
                   added
                     ? "bg-sage border-sage text-cream"
                     : "bg-ink border-ink text-cream hover:bg-sage-deep hover:border-sage-deep"
@@ -271,7 +271,7 @@ export function ProductDetail({ id }: { id: string }) {
                 { a: "Free samples", b: "with every order" },
                 { a: "Refillable", b: "at the maison" },
               ].map((perk) => (
-                <div key={perk.a} className="px-4 py-[14px] font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted text-center border-r border-line-soft last:border-r-0">
+                <div key={perk.a} className="px-4 py-[14px] font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted text-center border-r border-line-soft last:border-r-0">
                   {perk.a}<br />{perk.b}
                 </div>
               ))}
@@ -283,12 +283,12 @@ export function ProductDetail({ id }: { id: string }) {
         <div className="py-20 pt-[80px] pb-[50px]">
           <div className="flex justify-between items-end mb-[50px] max-[880px]:flex-col max-[880px]:items-start max-[880px]:gap-[14px]">
             <div>
-              <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">The composition</div>
+              <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">The composition</div>
               <h2 className="font-serif font-light text-[56px] leading-[0.95] mt-2 max-[880px]:text-[36px]">
                 Notes, <em className="italic">arranged.</em>
               </h2>
             </div>
-            <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">
+            <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">
               read top → base · open 15 min · skin scent 8 h
             </div>
           </div>
@@ -303,7 +303,7 @@ export function ProductDetail({ id }: { id: string }) {
                   key={tier}
                   className="grid grid-cols-[90px_1fr_1fr] gap-[18px] items-baseline py-[18px] border-b border-line-soft max-[880px]:grid-cols-1 max-[880px]:gap-[4px]"
                 >
-                  <span className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted capitalize">{tier}</span>
+                  <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted capitalize">{tier}</span>
                   <span className={`font-serif font-light text-[28px] leading-none ${tier === "top" ? "text-sage" : "text-ink"}`}>
                     {tier === "top" ? "Opening" : tier === "heart" ? "Composition" : "Dry-down"}
                   </span>
@@ -325,9 +325,9 @@ export function ProductDetail({ id }: { id: string }) {
               { label: "Sillage", value: product.sillage },
             ].map((row) => (
               <div key={row.label} className="grid items-center gap-[18px]" style={{ gridTemplateColumns: "110px 1fr 40px" }}>
-                <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-muted">{row.label}</span>
+                <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.16em] uppercase text-muted">{row.label}</span>
                 <Bars value={row.value} />
-                <span className="font-mono text-[12px] text-ink-2 text-right">{row.value}/5</span>
+                <span className="font-mono text-[13.5px] md:text-[12px] text-ink-2 text-right">{row.value}/5</span>
               </div>
             ))}
           </div>
@@ -336,7 +336,7 @@ export function ProductDetail({ id }: { id: string }) {
         {/* How to wear / Ingredients */}
         <div className="grid grid-cols-[1fr_1fr] gap-[60px] py-[60px] border-t border-line-soft border-b max-[880px]:grid-cols-1 max-[880px]:gap-10">
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Composition</div>
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Composition</div>
             <h3 className="font-serif font-light text-[36px] leading-none mt-[10px] mb-4">How to wear</h3>
             <p className="text-ink-2 leading-[1.7] max-w-[44ch] text-[16px]">
               Spray once on the inner wrist and once at the base of the neck. The composition
@@ -345,14 +345,14 @@ export function ProductDetail({ id }: { id: string }) {
             </p>
           </div>
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Provenance</div>
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Provenance</div>
             <h3 className="font-serif font-light text-[36px] leading-none mt-[10px] mb-4">Ingredients & origin</h3>
-            <ul className="list-none p-0 m-0 text-[13px] text-ink-2 leading-[1.8]" style={{ columns: 2, columnGap: 20 }}>
+            <ul className="list-none p-0 m-0 text-[14.5px] md:text-[13px] text-ink-2 leading-[1.8]" style={{ columns: 2, columnGap: 20 }}>
               {["Alcohol denat.", "Parfum", "Aqua", "Linalool*", "Limonene*", "Geraniol*", "Citronellol*", "Eugenol*", "Coumarin*", "Benzyl Salicylate*"].map((i) => (
                 <li key={i}>{i}</li>
               ))}
             </ul>
-            <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mt-[14px]">
+            <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted mt-[14px]">
               * naturally occurring in essential oils
             </div>
           </div>
@@ -362,10 +362,10 @@ export function ProductDetail({ id }: { id: string }) {
         <div className="py-[60px] pb-10">
           <div className="flex justify-between items-end mb-10 max-[880px]:flex-col max-[880px]:items-start max-[880px]:gap-6">
             <div>
-              <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Counterparts</div>
+              <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Counterparts</div>
               <h2 className="font-serif font-light text-[48px] leading-[0.95] mt-2">You might also wear</h2>
             </div>
-            <Link href={`/collections/${collection.id}`} className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group flex-shrink-0">
+            <Link href={`/collections/${collection.id}`} className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group flex-shrink-0">
               See series <span className="group-hover:translate-x-1 transition-transform duration-[240ms]"><ArrowRightIcon /></span>
             </Link>
           </div>
@@ -381,10 +381,10 @@ export function ProductDetail({ id }: { id: string }) {
                   code={`N° ${p.no}`}
                 />
                 <div className="mt-5 grid gap-[6px]">
-                  <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">N° {p.no} · {p.family}</div>
+                  <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">N° {p.no} · {p.family}</div>
                   <div className="flex justify-between items-baseline border-b border-line-soft pb-[10px] mt-1">
                     <span className="font-serif font-light text-[28px] leading-[0.95]">{p.name}</span>
-                    <span className="font-mono text-[13px] tracking-[0.06em] text-ink-2">€{p.price}</span>
+                    <span className="font-mono text-[14.5px] md:text-[13px] tracking-[0.06em] text-ink-2">€{p.price}</span>
                   </div>
                 </div>
               </Link>

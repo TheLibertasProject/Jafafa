@@ -118,7 +118,7 @@
   position: absolute;
   inset: auto 12px 12px 12px;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #8a857a;
@@ -129,6 +129,9 @@
 .ph-dark .ph-caption,
 .ph-sage .ph-caption {
   color: rgba(245, 240, 228, 0.7);
+}
+@media (min-width: 768px) {
+  .ph-caption { font-size: 10px; }
 }
 
 /* ——— Ticker ——— */

@@ -54,7 +54,7 @@ const QUESTIONS: { q: string; a: string }[] = [
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">FAQ</span>
@@ -93,7 +93,7 @@ function AccordionItem({
           onClick={onToggle}
           className="w-full flex items-center gap-6 py-7 text-left cursor-pointer group focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-4 max-[600px]:gap-4 max-[600px]:py-5"
         >
-          <span className="font-mono text-[10.5px] tracking-[0.14em] text-muted/50 w-6 shrink-0">{no}</span>
+          <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] text-muted/50 w-6 shrink-0">{no}</span>
           <span className="font-serif font-light text-[24px] leading-[1.2] flex-1 max-[600px]:text-[19px]">
             {q}
           </span>
@@ -143,7 +143,7 @@ export function Faq() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[40px] pb-16 max-[880px]:pb-10">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Before you write to us</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Before you write to us</div>
         <h1
           className="font-serif font-light leading-[0.92] mt-[14px] mb-6"
           style={{ fontSize: "clamp(56px,8vw,128px)" }}
@@ -170,7 +170,7 @@ export function Faq() {
           ))}
         </div>
 
-        <p className="text-[15px] leading-[1.7] text-ink-2 max-w-[52ch] mt-16">
+        <p className="text-[16px] md:text-[15px] leading-[1.7] text-ink-2 max-w-[52ch] mt-16">
           Still have a question? We&apos;re a small maison and we like
           hearing from people.{" "}
           <Link href="/contact" className="border-b border-current hover:text-ink transition-colors">

@@ -20,7 +20,7 @@ const SUBJECTS = ["An order", "A fragrance", "The press", "Something else"];
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Contact</span>
@@ -45,7 +45,7 @@ interface FieldProps {
 function Field({ label, id, type = "text", placeholder, required, autoComplete, value, onChange }: FieldProps) {
   return (
     <div>
-      <label htmlFor={id} className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+      <label htmlFor={id} className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
         {label}
         {required && <span className="ml-[3px] text-ink-2">*</span>}
       </label>
@@ -57,7 +57,7 @@ function Field({ label, id, type = "text", placeholder, required, autoComplete, 
         autoComplete={autoComplete}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50"
+        className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50"
       />
     </div>
   );
@@ -73,7 +73,7 @@ function Sent({ name }: { name: string }) {
           <div className="w-10 h-10 rounded-full border border-sage flex items-center justify-center text-sage mb-10">
             <CheckIcon />
           </div>
-          <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted mb-4">
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.2em] uppercase text-muted mb-4">
             Thank you, {name}
           </div>
           <h1 className="font-serif font-light leading-[0.92] mb-6" style={{ fontSize: "clamp(48px,6vw,88px)" }}>
@@ -90,7 +90,7 @@ function Sent({ name }: { name: string }) {
           </p>
           <Link
             href="/"
-            className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors"
+            className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors"
           >
             Return to the maison
             <span className="group-hover:translate-x-1 transition-transform duration-[240ms]">
@@ -134,7 +134,7 @@ export function Contact() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[40px] pb-16 max-[880px]:pb-10">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Get in touch</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Get in touch</div>
         <h1
           className="font-serif font-light leading-[0.92] mt-[14px] mb-6"
           style={{ fontSize: "clamp(56px,8vw,128px)" }}
@@ -153,7 +153,7 @@ export function Contact() {
 
           {/* Left: info */}
           <div className="sticky top-[100px] max-[880px]:static">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
               At the maison
             </div>
             <div className="grid gap-0">
@@ -163,8 +163,8 @@ export function Contact() {
                   className={`grid gap-5 py-[14px] items-baseline ${i < INFO_ITEMS.length - 1 ? "border-b border-line-soft" : ""}`}
                   style={{ gridTemplateColumns: "20px 90px 1fr" }}
                 >
-                  <span className="font-mono text-[10px] tracking-[0.12em] text-muted/50">{item.no}</span>
-                  <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">{item.label}</span>
+                  <span className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] text-muted/50">{item.no}</span>
+                  <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">{item.label}</span>
                   {item.label === "Write" || item.label === "Press" ? (
                     <a
                       href={`mailto:${item.value}`}
@@ -179,13 +179,13 @@ export function Contact() {
               ))}
             </div>
 
-            <p className="text-[14px] leading-[1.7] text-ink-2 max-w-[42ch] mt-10">
+            <p className="text-[15.5px] md:text-[14px] leading-[1.7] text-ink-2 max-w-[42ch] mt-10">
               Prefer to talk in person? Sixty minutes with one of our
               perfumers, by appointment.
             </p>
             <Link
               href="/book-visit"
-              className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-4 group"
+              className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-4 group"
             >
               Book a visit
               <span className="inline-block transition-transform duration-[240ms] group-hover:translate-x-1">
@@ -196,7 +196,7 @@ export function Contact() {
 
           {/* Right: form */}
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
               Send a letter
             </div>
             <form onSubmit={handleSubmit} className="grid gap-4" noValidate>
@@ -222,7 +222,7 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+                <label htmlFor="subject" className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
                   This is about
                 </label>
                 <div className="relative">
@@ -230,7 +230,7 @@ export function Contact() {
                     id="subject"
                     value={form.subject}
                     onChange={(e) => set("subject")(e.target.value)}
-                    className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] appearance-none cursor-pointer"
+                    className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] appearance-none cursor-pointer"
                   >
                     {SUBJECTS.map((s) => (
                       <option key={s} value={s}>{s}</option>
@@ -243,7 +243,7 @@ export function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+                <label htmlFor="message" className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
                   Message
                   <span className="ml-[3px] text-ink-2">*</span>
                 </label>
@@ -254,7 +254,7 @@ export function Contact() {
                   onChange={(e) => set("message")(e.target.value)}
                   placeholder="Tell us what's on your mind…"
                   rows={7}
-                  className="w-full border border-line bg-paper/70 px-[14px] py-[12px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50 resize-none"
+                  className="w-full border border-line bg-paper/70 px-[14px] py-[12px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50 resize-none"
                 />
               </div>
 
@@ -262,7 +262,7 @@ export function Contact() {
                 type="submit"
                 disabled={!canSubmit}
                 className={[
-                  "w-full h-[54px] rounded-[4px] border font-sans text-[13px] tracking-[0.1em] uppercase font-medium mt-2",
+                  "w-full h-[54px] rounded-[4px] border font-sans text-[14.5px] md:text-[13px] tracking-[0.1em] uppercase font-medium mt-2",
                   "transition-all duration-[280ms]",
                   canSubmit
                     ? "bg-ink text-cream border-ink hover:opacity-[0.84] cursor-pointer"
@@ -272,7 +272,7 @@ export function Contact() {
                 Send letter
               </button>
 
-              <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted text-center mt-2">
+              <p className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted text-center mt-2">
                 We reply within three working days
               </p>
             </form>

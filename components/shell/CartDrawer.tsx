@@ -56,7 +56,7 @@ export function CartDrawer() {
           >
             {/* Head */}
             <div className="flex items-center justify-between px-7 py-[22px] border-b border-line-soft">
-              <h3 className="font-mono text-[11px] tracking-[0.2em] uppercase font-medium">
+              <h3 className="font-mono text-[13px] md:text-[11px] tracking-[0.2em] uppercase font-medium">
                 Your bag · {count} {count === 1 ? "item" : "items"}
               </h3>
               <button
@@ -76,7 +76,7 @@ export function CartDrawer() {
                     <BottleMark width={64} opacity={0.18} />
                   </div>
                   Your bag is quiet.
-                  <div className="mt-[18px] font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted not-italic">
+                  <div className="mt-[18px] font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted not-italic">
                     <Link href="/collections" onClick={closeCart} className="border-b border-current pb-[3px]">
                       Begin browsing
                     </Link>
@@ -101,10 +101,10 @@ export function CartDrawer() {
                       />
                       <div className="grid gap-1">
                         <div className="font-serif text-[19px] leading-none">{p.name}</div>
-                        <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">
+                        <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">
                           {p.family} · {p.volume}
                         </div>
-                        <div className="inline-flex items-center border border-line rounded-full font-mono text-[11px] tracking-[0.1em] mt-2 self-start">
+                        <div className="inline-flex items-center border border-line rounded-full font-mono text-[13px] md:text-[11px] tracking-[0.1em] mt-2 self-start">
                           <button
                             className="py-[6px] px-[10px]"
                             onClick={() => setQty(p.id, item.qty - 1)}
@@ -122,7 +122,7 @@ export function CartDrawer() {
                           </button>
                         </div>
                       </div>
-                      <div className="font-mono text-[12px] tracking-[0.06em]">€{p.price * item.qty}</div>
+                      <div className="font-mono text-[13.5px] md:text-[12px] tracking-[0.06em]">€{p.price * item.qty}</div>
                     </div>
                   );
                 })
@@ -133,22 +133,22 @@ export function CartDrawer() {
             {items.length > 0 && (
               <div className="px-7 py-[22px] border-t border-line-soft grid gap-[14px]">
                 <div className="flex justify-between items-baseline font-serif text-[22px]">
-                  <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted">Subtotal</span>
+                  <span className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted">Subtotal</span>
                   <span>€{subtotal}</span>
                 </div>
-                <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">
+                <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">
                   Shipping and taxes calculated at checkout.
                 </div>
                 <Link
                   href="/checkout"
                   onClick={closeCart}
-                  className="w-full h-[46px] bg-ink text-cream font-sans text-[12px] tracking-[0.2em] uppercase font-medium rounded-full border border-ink hover:opacity-[0.84] transition-opacity duration-[220ms] flex items-center justify-center"
+                  className="w-full h-[46px] bg-ink text-cream font-sans text-[13.5px] md:text-[12px] tracking-[0.2em] uppercase font-medium rounded-full border border-ink hover:opacity-[0.84] transition-opacity duration-[220ms] flex items-center justify-center"
                 >
                   Checkout
                 </Link>
                 <button
                   onClick={closeCart}
-                  className="self-center font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 mx-auto"
+                  className="self-center font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 mx-auto"
                 >
                   Continue browsing
                 </button>

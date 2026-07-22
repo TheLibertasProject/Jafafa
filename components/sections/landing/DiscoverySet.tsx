@@ -33,7 +33,7 @@ export function DiscoverySet() {
         />
       </div>
 
-      <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mt-11 mb-[22px]">
+      <div className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.26em] text-label mt-11 mb-[22px]">
         N° DS · For the Curious
       </div>
       <h2
@@ -50,7 +50,7 @@ export function DiscoverySet() {
       <button
         onClick={handleAdd}
         className={[
-          "mt-[38px] inline-flex items-center justify-center gap-[10px] rounded-full border font-sans font-medium text-[11px] uppercase tracking-[0.2em] px-[42px] py-[18px] transition-opacity duration-300",
+          "mt-[38px] inline-flex items-center justify-center gap-[10px] rounded-full border font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.2em] px-[42px] py-[18px] transition-opacity duration-300",
           added
             ? "bg-sage border-sage text-cream"
             : "bg-ink border-ink text-cream hover:opacity-[0.84]",
@@ -64,7 +64,7 @@ export function DiscoverySet() {
           <>Add to Bag · €38</>
         )}
       </button>
-      <div className="mt-[22px] font-sans font-medium text-[10px] uppercase tracking-[0.2em] text-muted">
+      <div className="mt-[22px] font-sans font-medium text-[12px] md:text-[10px] uppercase tracking-[0.2em] text-muted">
         Ships Within 48 Hours
       </div>
     </section>

@@ -11,7 +11,7 @@ export function NewsletterForm() {
 
   if (done) {
     return (
-      <p className="font-body text-[15px] text-ink-2 border-b border-ink pb-[11px] max-w-[320px] m-0">
+      <p className="font-body text-[16px] md:text-[15px] text-ink-2 border-b border-ink pb-[11px] max-w-[320px] m-0">
         Noted. Two letters a year, no more.
       </p>
     );
@@ -33,7 +33,7 @@ export function NewsletterForm() {
         type="email"
         required
         placeholder="Your email"
-        className="flex-1 bg-transparent border-0 outline-none font-body text-[15px] text-ink placeholder:text-muted"
+        className="flex-1 bg-transparent border-0 outline-none font-body text-[16px] md:text-[15px] text-ink placeholder:text-muted"
       />
       <button
         type="submit"

@@ -34,7 +34,7 @@ const ENTRIES: { date: string; title: string; body: string[] }[] = [
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Journal</span>
@@ -50,7 +50,7 @@ export function Journal() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[40px] pb-16">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Kept slowly</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Kept slowly</div>
         <h1
           className="font-serif font-light leading-[0.94] mt-[14px] mb-6"
           style={{ fontSize: "clamp(56px, 8vw, 120px)" }}
@@ -69,7 +69,7 @@ export function Journal() {
           <article key={entry.date} className="py-16 border-b border-line-soft max-[880px]:py-10">
             <div className="grid grid-cols-[220px_1fr] gap-10 max-[880px]:grid-cols-1 max-[880px]:gap-4">
               <div>
-                <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted sticky top-[100px]">
+                <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted sticky top-[100px]">
                   {entry.date}
                 </div>
               </div>

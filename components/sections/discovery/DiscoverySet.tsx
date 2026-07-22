@@ -11,7 +11,7 @@ import { CheckIcon } from "@/components/ui/Icons";
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <Link href="/collections" className="hover:text-ink transition-colors">Collections</Link>
@@ -75,7 +75,7 @@ export function DiscoverySet() {
 
           {/* Right — info */}
           <div className="pt-2">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">
               Discovery · Five compositions
             </div>
 
@@ -92,7 +92,7 @@ export function DiscoverySet() {
             </p>
 
             {/* Meta strip */}
-            <div className="flex gap-6 flex-wrap font-mono text-[11px] tracking-[0.16em] uppercase text-ink-2 py-[14px] border-t border-line-soft border-b mb-7">
+            <div className="flex gap-6 flex-wrap font-mono text-[13px] md:text-[11px] tracking-[0.16em] uppercase text-ink-2 py-[14px] border-t border-line-soft border-b mb-7">
               <span className="flex gap-2 items-center">
                 <b className="font-medium text-ink">Contents</b> · 5 × 2ml vials
               </span>
@@ -106,7 +106,7 @@ export function DiscoverySet() {
 
             {/* The quiet promise */}
             <div className="border border-line-soft rounded-[4px] px-6 py-5 mb-7 bg-paper">
-              <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mb-2">
+              <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted mb-2">
                 The quiet promise
               </div>
               <p className="font-serif text-[19px] leading-[1.5] text-ink m-0">
@@ -117,7 +117,7 @@ export function DiscoverySet() {
             {/* Add row */}
             <button
               onClick={handleAdd}
-              className={`w-full h-14 rounded-[4px] border font-sans text-[13px] tracking-[0.08em] uppercase font-medium cursor-pointer transition-all duration-[240ms] flex items-center justify-center gap-[14px] ${
+              className={`w-full h-14 rounded-[4px] border font-sans text-[14.5px] md:text-[13px] tracking-[0.08em] uppercase font-medium cursor-pointer transition-all duration-[240ms] flex items-center justify-center gap-[14px] ${
                 added
                   ? "bg-sage border-sage text-cream"
                   : "bg-ink border-ink text-cream hover:bg-sage-deep hover:border-sage-deep"
@@ -141,7 +141,7 @@ export function DiscoverySet() {
               ].map((perk) => (
                 <div
                   key={perk.a}
-                  className="px-4 py-[14px] font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted text-center border-r border-line-soft last:border-r-0"
+                  className="px-4 py-[14px] font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted text-center border-r border-line-soft last:border-r-0"
                 >
                   {perk.a}
                   <br />
@@ -155,7 +155,7 @@ export function DiscoverySet() {
         {/* How it works */}
         <div className="pt-[20px] pb-[20px] border-t border-line-soft">
           <div className="pt-[40px] pb-8">
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">How it works</div>
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">How it works</div>
             <h2 className="font-serif font-light text-[48px] leading-[0.95] mt-2 max-[880px]:text-[36px]">
               Three steps, <em className="italic">no rush.</em>
             </h2>
@@ -168,9 +168,9 @@ export function DiscoverySet() {
                   i > 0 ? "max-[880px]:border-t max-[880px]:border-line-soft" : ""
                 }`}
               >
-                <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted">N° {s.no}</div>
+                <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted">N° {s.no}</div>
                 <div className="font-serif font-light text-[28px] mt-3 mb-2">{s.label}</div>
-                <div className="text-[13px] text-ink-2 leading-[1.6]">{s.body}</div>
+                <div className="text-[14.5px] md:text-[13px] text-ink-2 leading-[1.6]">{s.body}</div>
               </div>
             ))}
           </div>
@@ -178,7 +178,7 @@ export function DiscoverySet() {
 
         {/* The five */}
         <div className="py-[60px] pb-20">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2 mb-8">The five</div>
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2 mb-8">The five</div>
           <div className="grid grid-cols-5 gap-6 max-[880px]:grid-cols-2 max-[520px]:grid-cols-1">
             {PRODUCTS.map((p) => (
               <Link key={p.id} href={`/products/${p.id}`} className="prod-card cursor-pointer block group">
@@ -191,7 +191,7 @@ export function DiscoverySet() {
                   code={`N° ${p.no}`}
                 />
                 <div className="mt-4 grid gap-1">
-                  <div className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted">N° {p.no}</div>
+                  <div className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted">N° {p.no}</div>
                   <div className="font-serif font-light text-[20px] leading-[1.05] group-hover:opacity-70 transition-opacity duration-[200ms]">
                     {p.name}
                   </div>

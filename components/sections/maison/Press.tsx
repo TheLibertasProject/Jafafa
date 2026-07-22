@@ -24,7 +24,7 @@ const QUOTES: { no: string; quote: string; pub: string }[] = [
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Press</span>
@@ -40,7 +40,7 @@ export function Press() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[40px] pb-16">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">In print</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">In print</div>
         <h1
           className="font-serif font-light leading-[0.94] mt-[14px] mb-6"
           style={{ fontSize: "clamp(56px, 8vw, 120px)" }}
@@ -58,14 +58,14 @@ export function Press() {
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pb-[100px] border-t border-line">
         {QUOTES.map((q) => (
           <div key={q.no} className="grid gap-6 py-16 border-b border-line-soft max-[880px]:py-12">
-            <span className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-muted">N° {q.no}</span>
+            <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.2em] uppercase text-muted">N° {q.no}</span>
             <p
               className="font-serif italic font-light leading-[1.25] max-w-[880px]"
               style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
             >
               &ldquo;{q.quote}&rdquo;
             </p>
-            <span className="font-mono text-[11px] tracking-[0.16em] uppercase text-muted">{q.pub}</span>
+            <span className="font-mono text-[13px] md:text-[11px] tracking-[0.16em] uppercase text-muted">{q.pub}</span>
           </div>
         ))}
       </section>
@@ -73,7 +73,7 @@ export function Press() {
       {/* For writers */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pb-24">
         <div className="max-w-[560px]">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2 mb-4">For writers</div>
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2 mb-4">For writers</div>
           <p className="font-serif font-light text-[20px] text-ink-2 leading-[1.5]">
             Press kits and samples are available on request. Write to us at{" "}
             <a

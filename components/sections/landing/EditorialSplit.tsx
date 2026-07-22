@@ -15,14 +15,14 @@ export function EditorialSplit() {
               code="PLATE 02"
               ratio="4 / 5"
             />
-            <div className="mt-4 font-sans font-medium text-[10px] uppercase tracking-[0.2em] text-muted">
+            <div className="mt-4 font-sans font-medium text-[12px] md:text-[10px] uppercase tracking-[0.2em] text-muted">
               Plate 02 · Grasse, 05.24
             </div>
           </div>
 
           {/* Text */}
           <div className="flex-1 min-w-0">
-            <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
+            <div className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
               N° 02 · The Method
             </div>
             <h2

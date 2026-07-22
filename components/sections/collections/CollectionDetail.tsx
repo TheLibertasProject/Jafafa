@@ -11,7 +11,7 @@ import type { Product } from "@/lib/types";
 function Crumbs({ items }: { items: Array<{ label: string; href?: string }> }) {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         {items.map((c, i) => (
           <span key={i} className="flex items-center gap-[10px]">
             {i > 0 && <span className="opacity-50">/</span>}
@@ -48,16 +48,16 @@ function ProductCard({ p, kind }: { p: Product; kind: "default" | "dark" | "sage
           />
         </div>
         <div className="absolute inset-0 flex items-end justify-end p-[18px] opacity-0 hover:opacity-100 transition-opacity duration-[280ms] text-paper bg-gradient-to-b from-transparent via-transparent to-ink/50">
-          <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase">View ↗</span>
+          <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.16em] uppercase">View ↗</span>
         </div>
       </div>
       <div className="mt-5 grid gap-[6px]">
-        <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">N° {p.no} · {p.family}</div>
+        <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">N° {p.no} · {p.family}</div>
         <div className="flex justify-between items-baseline border-b border-line-soft pb-[10px] mt-1">
           <span className="font-serif font-light text-[32px] leading-[0.95]">{p.name}</span>
-          <span className="font-mono text-[13px] tracking-[0.06em] text-ink-2">€{p.price}</span>
+          <span className="font-mono text-[14.5px] md:text-[13px] tracking-[0.06em] text-ink-2">€{p.price}</span>
         </div>
-        <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">{p.volume} · Eau de Parfum</div>
+        <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">{p.volume} · Eau de Parfum</div>
       </div>
     </Link>
   );
@@ -71,7 +71,7 @@ export function CollectionDetail({ id }: { id: string }) {
     return (
       <main className="page-enter w-full max-w-[1440px] mx-auto px-10 py-[120px]">
         <div className="font-serif font-light text-[64px]">Collection not found.</div>
-        <Link href="/collections" className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group">
+        <Link href="/collections" className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group">
           Back to collections <span className="group-hover:translate-x-1 transition-transform duration-[240ms]"><ArrowRightIcon /></span>
         </Link>
       </main>
@@ -104,7 +104,7 @@ export function CollectionDetail({ id }: { id: string }) {
           className="grid grid-cols-[1fr_1fr] gap-[60px] items-end pt-[50px] pb-20 max-[880px]:grid-cols-1 max-[880px]:gap-4 max-[880px]:pt-[30px] max-[880px]:pb-[50px]"
         >
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">
               Series {collection.no} · {products.length} {products.length === 1 ? "fragrance" : "fragrances"}
             </div>
             <h1
@@ -131,10 +131,10 @@ export function CollectionDetail({ id }: { id: string }) {
         {/* Filters */}
         <div className="flex justify-between items-center py-[18px] border-t border-line border-b mb-16 max-[880px]:flex-col max-[880px]:gap-4 max-[880px]:items-start">
           <div className="flex gap-2 items-center flex-wrap">
-            <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mr-2">Family</span>
+            <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted mr-2">Family</span>
             <button
               onClick={() => setFilter("all")}
-              className={`font-mono text-[10.5px] tracking-[0.16em] uppercase px-[14px] py-2 border rounded-full cursor-pointer transition-all duration-[220ms] ${filter === "all" ? "bg-ink text-cream border-ink" : "border-line text-ink-2 hover:bg-ink hover:text-cream hover:border-ink"}`}
+              className={`font-mono text-[12.5px] md:text-[10.5px] tracking-[0.16em] uppercase px-[14px] py-2 border rounded-full cursor-pointer transition-all duration-[220ms] ${filter === "all" ? "bg-ink text-cream border-ink" : "border-line text-ink-2 hover:bg-ink hover:text-cream hover:border-ink"}`}
             >
               All
             </button>
@@ -142,13 +142,13 @@ export function CollectionDetail({ id }: { id: string }) {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`font-mono text-[10.5px] tracking-[0.16em] uppercase px-[14px] py-2 border rounded-full cursor-pointer transition-all duration-[220ms] ${filter === f ? "bg-ink text-cream border-ink" : "border-line text-ink-2 hover:bg-ink hover:text-cream hover:border-ink"}`}
+                className={`font-mono text-[12.5px] md:text-[10.5px] tracking-[0.16em] uppercase px-[14px] py-2 border rounded-full cursor-pointer transition-all duration-[220ms] ${filter === f ? "bg-ink text-cream border-ink" : "border-line text-ink-2 hover:bg-ink hover:text-cream hover:border-ink"}`}
               >
                 {f}
               </button>
             ))}
           </div>
-          <div className="font-mono text-[11px] tracking-[0.14em] uppercase text-muted flex items-center gap-[10px]">
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.14em] uppercase text-muted flex items-center gap-[10px]">
             Sort · <b className="text-ink font-medium">Intensity, ascending</b>
             <ChevronDownIcon />
           </div>
@@ -163,12 +163,12 @@ export function CollectionDetail({ id }: { id: string }) {
 
         {/* Perfumer note */}
         <div className="mt-[100px] py-[60px] border-t border-line-soft border-b grid grid-cols-[1fr_2fr] gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-6">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">From the perfumer</div>
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">From the perfumer</div>
           <div>
             <p className="font-serif font-light text-[24px] leading-[1.35] m-0 max-w-[600px]">
               {perfumerQuote}
             </p>
-            <div className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted mt-6">
+            <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted mt-6">
               L. Audemars & M. Aaltonen
             </div>
           </div>

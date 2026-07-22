@@ -26,16 +26,16 @@ function GridCard({ p }: { p: Product }) {
           />
         </div>
       </div>
-      <div className="mt-5 font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label">
+      <div className="mt-5 font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.2em] text-label">
         N° {p.no} · {p.family}
       </div>
       <div className="flex justify-between items-baseline gap-4 mt-[14px] border-t border-line pt-[15px]">
         <span className="font-serif font-normal text-[28px] leading-none text-ink">{p.name}</span>
-        <span className="font-sans text-[14px] tracking-[0.03em] text-ink-2 whitespace-nowrap">
+        <span className="font-sans text-[15.5px] md:text-[14px] tracking-[0.03em] text-ink-2 whitespace-nowrap">
           €{p.price}
         </span>
       </div>
-      <div className="mt-[9px] font-sans font-medium text-[10px] uppercase tracking-[0.18em] text-muted">
+      <div className="mt-[9px] font-sans font-medium text-[12px] md:text-[10px] uppercase tracking-[0.18em] text-muted">
         {p.volume.toUpperCase()} · Eau de Parfum
       </div>
     </Link>
@@ -51,7 +51,7 @@ export function FeaturedFragrances() {
       {/* ── Intro · N° 01 ───────────────────────────────────────── */}
       <section className="max-w-[1240px] mx-auto px-[52px] pt-[132px] pb-[82px] max-[880px]:pt-[90px] max-[880px]:pb-[60px] max-[720px]:px-6">
         <div className="max-w-[760px] mx-auto flex flex-col items-center text-center">
-          <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
+          <div className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.26em] text-label mb-[26px]">
             N° 01 · The Five
           </div>
           <h2
@@ -67,16 +67,16 @@ export function FeaturedFragrances() {
           <div className="flex items-center gap-[30px] mt-[42px] flex-wrap justify-center">
             <Link
               href="/collections"
-              className="font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border border-ink rounded-full px-9 py-4 transition-colors duration-300 hover:bg-ink hover:text-cream"
+              className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.2em] text-ink border border-ink rounded-full px-9 py-4 transition-colors duration-300 hover:bg-ink hover:text-cream"
             >
               Explore Fragrances
             </Link>
             <Link
               href="/about"
-              className="font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
+              className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
             >
               The Maison
-              <span className="text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="text-[15.5px] md:text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </div>
         </div>
@@ -87,7 +87,7 @@ export function FeaturedFragrances() {
             <div
               key={c}
               className={[
-                "py-[26px] px-2 text-center font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-ink-2",
+                "py-[26px] px-2 text-center font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.2em] text-ink-2",
                 i === 0 ? "" : "border-l border-line",
                 i === 2 ? "max-[640px]:border-l-0 max-[640px]:border-t max-[640px]:border-line" : "",
                 i === 3 ? "max-[640px]:border-t max-[640px]:border-line" : "",
@@ -122,7 +122,7 @@ export function FeaturedFragrances() {
             </div>
           </Link>
           <div className="flex flex-col items-start">
-            <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label">
+            <div className="font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.2em] text-label">
               N° {feature.no} · {feature.family}
             </div>
             <h3
@@ -133,16 +133,16 @@ export function FeaturedFragrances() {
             </h3>
             <div className="mt-[18px] flex items-baseline gap-[18px]">
               <span className="font-sans text-[16px] tracking-[0.03em] text-ink-2">€{feature.price}</span>
-              <span className="font-sans font-medium text-[10px] uppercase tracking-[0.18em] text-muted">
+              <span className="font-sans font-medium text-[12px] md:text-[10px] uppercase tracking-[0.18em] text-muted">
                 {feature.volume.toUpperCase()}
               </span>
             </div>
             <Link
               href={`/products/${feature.id}`}
-              className="mt-[34px] font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
+              className="mt-[34px] font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
             >
               Discover
-              <span className="text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span className="text-[15.5px] md:text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </div>
         </div>

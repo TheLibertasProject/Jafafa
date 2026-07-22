@@ -51,7 +51,7 @@ export function Footer() {
             <p className="font-body text-[16px] leading-[1.6] text-ink-2 mt-6 mb-[34px] max-w-[300px]">
               Olfactive botanicals, slow-grown in small batches. Bottled in Grasse and Helsinki.
             </p>
-            <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label mb-4">
+            <div className="font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.2em] text-label mb-4">
               Letters, twice a year.
             </div>
             <NewsletterForm />
@@ -60,7 +60,7 @@ export function Footer() {
           {/* Link columns */}
           {COLUMNS.map((col) => (
             <div key={col.head}>
-              <div className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label mb-6">
+              <div className="font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.2em] text-label mb-6">
                 {col.head}
               </div>
               <div className="flex flex-col gap-[15px]">
@@ -68,7 +68,7 @@ export function Footer() {
                   <Link
                     key={l.label}
                     href={l.href}
-                    className="font-body text-[15px] text-ink-2 hover:text-ink transition-colors"
+                    className="font-body text-[16px] md:text-[15px] text-ink-2 hover:text-ink transition-colors"
                   >
                     {l.label}
                   </Link>
@@ -78,7 +78,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-[72px] pt-7 border-t border-line flex justify-between gap-6 flex-wrap font-sans font-medium text-[10px] uppercase tracking-[0.16em] text-muted">
+        <div className="mt-[72px] pt-7 border-t border-line flex justify-between gap-6 flex-wrap font-sans font-medium text-[12px] md:text-[10px] uppercase tracking-[0.16em] text-muted">
           <span>© Maison Jafafa MMXXV · All Rights Reserved</span>
           <span>EN · EUR € · Made Between Helsinki & Grasse</span>
         </div>

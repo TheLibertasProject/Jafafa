@@ -31,7 +31,7 @@ export function Nav() {
           </button>
           <button
             onClick={openMenu}
-            className="font-sans font-medium text-[10.5px] uppercase tracking-[0.26em] text-ink-2 max-[520px]:hidden cursor-pointer"
+            className="font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.26em] text-ink-2 max-[520px]:hidden cursor-pointer"
           >
             Menu
           </button>
@@ -54,7 +54,7 @@ export function Nav() {
           <button onClick={openCart} aria-label="Bag" className="relative inline-flex cursor-pointer">
             <BagIcon width={17} height={17} />
             {count > 0 && (
-              <span className="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 rounded-full bg-ink text-cream font-sans text-[9px] font-medium inline-flex items-center justify-center tracking-[0.02em]">
+              <span className="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 rounded-full bg-ink text-cream font-sans text-[11px] md:text-[9px] font-medium inline-flex items-center justify-center tracking-[0.02em]">
                 {count}
               </span>
             )}

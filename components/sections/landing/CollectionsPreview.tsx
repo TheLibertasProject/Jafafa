@@ -33,7 +33,7 @@ function Band({ c }: { c: Collection }) {
       </div>
       <div className="max-w-[1240px] mx-auto px-[52px] py-6 flex justify-between items-end gap-6 border-b border-line max-[720px]:px-6">
         <div className="flex flex-col gap-[10px]">
-          <span className="font-sans font-medium text-[10.5px] uppercase tracking-[0.2em] text-label">
+          <span className="font-sans font-medium text-[12.5px] md:text-[10.5px] uppercase tracking-[0.2em] text-label">
             Series {c.no}
           </span>
           <span className="font-serif font-normal text-ink leading-none" style={{ fontSize: "clamp(28px, 3vw, 40px)" }}>
@@ -41,7 +41,7 @@ function Band({ c }: { c: Collection }) {
           </span>
         </div>
         <div className="flex flex-col gap-2 text-right">
-          <span className="font-sans font-medium text-[10px] uppercase tracking-[0.2em] text-muted">
+          <span className="font-sans font-medium text-[12px] md:text-[10px] uppercase tracking-[0.2em] text-muted">
             {count} {count === 1 ? "Fragrance" : "Fragrances"}
           </span>
           <span className="font-body italic text-[19px] text-ink-2">{c.tagline}</span>
@@ -57,7 +57,7 @@ export function CollectionsPreview() {
       <section className="max-w-[1240px] mx-auto px-[52px] pt-[132px] pb-[66px] max-[880px]:pt-[90px] max-[880px]:pb-[50px] max-[720px]:px-6">
         <div className="flex justify-between items-end gap-8 flex-wrap">
           <div>
-            <div className="font-sans font-medium text-[11px] uppercase tracking-[0.26em] text-label mb-6">
+            <div className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.26em] text-label mb-6">
               N° 03 · Series
             </div>
             <h2
@@ -69,10 +69,10 @@ export function CollectionsPreview() {
           </div>
           <Link
             href="/collections"
-            className="font-sans font-medium text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
+            className="font-sans font-medium text-[13px] md:text-[11px] uppercase tracking-[0.2em] text-ink border-b border-ink pb-[5px] inline-flex items-center gap-[10px] group"
           >
             View All
-            <span className="text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <span className="text-[15.5px] md:text-[14px] transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </section>

@@ -90,7 +90,7 @@ function getSlotsForDate(date: Date): Array<Slot & { available: boolean }> {
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px] flex-wrap">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Book a visit</span>
@@ -154,7 +154,7 @@ function Calendar({ selected, onSelect }: CalendarProps) {
         </button>
         <div className="font-serif font-light text-[22px] leading-none">
           {MONTH_NAMES[viewMonth]}{" "}
-          <span className="font-mono text-[13px] tracking-[0.1em] text-muted">{viewYear}</span>
+          <span className="font-mono text-[14.5px] md:text-[13px] tracking-[0.1em] text-muted">{viewYear}</span>
         </div>
         <button
           onClick={nextMonth}
@@ -168,7 +168,7 @@ function Calendar({ selected, onSelect }: CalendarProps) {
       {/* Day headers */}
       <div className="grid grid-cols-7 mb-2">
         {DAY_LABELS.map((d) => (
-          <div key={d} className="text-center font-mono text-[10px] tracking-[0.14em] uppercase text-muted py-1">
+          <div key={d} className="text-center font-mono text-[12px] md:text-[10px] tracking-[0.14em] uppercase text-muted py-1">
             {d}
           </div>
         ))}
@@ -201,7 +201,7 @@ function Calendar({ selected, onSelect }: CalendarProps) {
                     aria-label={`${day} ${MONTH_NAMES[viewMonth]}`}
                     aria-pressed={isSelected}
                     className={[
-                      "w-9 h-9 rounded-[4px] font-mono text-[13px] flex items-center justify-center transition-all duration-[160ms] relative",
+                      "w-9 h-9 rounded-[4px] font-mono text-[14.5px] md:text-[13px] flex items-center justify-center transition-all duration-[160ms] relative",
                       isSelected
                         ? "bg-ink text-cream cursor-pointer"
                         : isDisabled
@@ -222,7 +222,7 @@ function Calendar({ selected, onSelect }: CalendarProps) {
         ))}
       </div>
 
-      <div className="flex items-center gap-5 mt-5 font-mono text-[10px] tracking-[0.12em] uppercase text-muted">
+      <div className="flex items-center gap-5 mt-5 font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted">
         <span className="flex items-center gap-[6px]">
           <span className="w-[3px] h-[3px] rounded-full bg-sage inline-block" /> Available
         </span>
@@ -242,14 +242,14 @@ interface FieldProps {
 function Field({ label, id, type = "text", placeholder, required, autoComplete, value, onChange, className = "" }: FieldProps) {
   return (
     <div className={className}>
-      <label htmlFor={id} className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+      <label htmlFor={id} className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
         {label}{required && <span className="ml-[3px] text-ink-2">*</span>}
       </label>
       <input
         id={id} type={type} placeholder={placeholder} required={required}
         autoComplete={autoComplete} value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50"
+        className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50"
       />
     </div>
   );
@@ -267,7 +267,7 @@ function Confirmed({ date, time, name, ref: refNo }: { date: Date; time: string;
           <div className="w-10 h-10 rounded-full border border-sage flex items-center justify-center text-sage mb-10">
             <CheckIcon />
           </div>
-          <div className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted mb-4">
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.2em] uppercase text-muted mb-4">
             Reference {refNo}
           </div>
           <h1 className="font-serif font-light leading-[0.92] mb-6" style={{ fontSize: "clamp(48px,6vw,88px)" }}>
@@ -275,19 +275,19 @@ function Confirmed({ date, time, name, ref: refNo }: { date: Date; time: string;
           </h1>
           <div className="border-t border-line-soft pt-6 pb-6 border-b grid gap-[10px] mb-8">
             <div className="grid gap-1" style={{ gridTemplateColumns: "120px 1fr" }}>
-              <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">Date</span>
+              <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">Date</span>
               <span className="font-serif text-[17px]">{formatDate(date)}</span>
             </div>
             <div className="grid gap-1" style={{ gridTemplateColumns: "120px 1fr" }}>
-              <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">Time</span>
+              <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">Time</span>
               <span className="font-serif text-[17px]">{time}</span>
             </div>
             <div className="grid gap-1" style={{ gridTemplateColumns: "120px 1fr" }}>
-              <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">Guest</span>
+              <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">Guest</span>
               <span className="font-serif text-[17px]">{name}</span>
             </div>
             <div className="grid gap-1" style={{ gridTemplateColumns: "120px 1fr" }}>
-              <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">Location</span>
+              <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">Location</span>
               <span className="font-serif text-[17px]">Korkeavuorenkatu 22, Helsinki</span>
             </div>
           </div>
@@ -295,7 +295,7 @@ function Confirmed({ date, time, name, ref: refNo }: { date: Date; time: string;
             A confirmation letter will arrive by email. If anything changes, write to us at{" "}
             <span className="border-b border-current">hello@jafafa.com</span>.
           </p>
-          <Link href="/" className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors">
+          <Link href="/" className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center group hover:text-ink transition-colors">
             Return to the maison
             <span className="group-hover:translate-x-1 transition-transform duration-[240ms]"><ArrowRightIcon /></span>
           </Link>
@@ -382,7 +382,7 @@ export function BookVisit() {
           className="grid grid-cols-[1.2fr_1fr] gap-[60px] items-end pt-[40px] pb-20 max-[880px]:grid-cols-1 max-[880px]:gap-6 max-[880px]:pb-10"
         >
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">
               By appointment · Helsinki
             </div>
             <h1
@@ -419,7 +419,7 @@ export function BookVisit() {
           {/* ── LEFT: Calendar + info ──────────────────────────────────── */}
           <div className="sticky top-[100px] max-[880px]:static">
             <div className="flex items-baseline gap-4 mb-8">
-              <span className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-muted">01</span>
+              <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.2em] uppercase text-muted">01</span>
               <h2 className="font-serif font-light text-[28px] leading-none">Choose a date</h2>
             </div>
 
@@ -427,7 +427,7 @@ export function BookVisit() {
 
             {/* What to expect */}
             <div className="mt-14 border-t border-line-soft pt-8">
-              <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
+              <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-muted mb-6">
                 What to expect
               </div>
               <div className="grid gap-0">
@@ -437,8 +437,8 @@ export function BookVisit() {
                     className={`grid gap-5 py-[14px] items-baseline ${i < EXPECT_ITEMS.length - 1 ? "border-b border-line-soft" : ""}`}
                     style={{ gridTemplateColumns: "20px 90px 1fr" }}
                   >
-                    <span className="font-mono text-[10px] tracking-[0.12em] text-muted/50">{item.no}</span>
-                    <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted">{item.label}</span>
+                    <span className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] text-muted/50">{item.no}</span>
+                    <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.14em] uppercase text-muted">{item.label}</span>
                     <span className="font-serif text-[16px] text-ink-2 leading-[1.4]">{item.value}</span>
                   </div>
                 ))}
@@ -452,7 +452,7 @@ export function BookVisit() {
             {/* Time slots */}
             <div className="pb-10">
               <div className="flex items-baseline gap-4 mb-6">
-                <span className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-muted">02</span>
+                <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.2em] uppercase text-muted">02</span>
                 <h2 className="font-serif font-light text-[28px] leading-none">Select a time</h2>
               </div>
 
@@ -466,7 +466,7 @@ export function BookVisit() {
                 <div className="grid gap-6">
                   {slotGroups.map((group) => (
                     <div key={group.period}>
-                      <div className="font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-3">
+                      <div className="font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-3">
                         {group.heading}
                       </div>
                       <div className="flex flex-wrap gap-[8px]">
@@ -478,7 +478,7 @@ export function BookVisit() {
                               disabled={!slot.available}
                               onClick={() => slot.available && setSelectedTime(`${slot.time} · ${slot.label}`)}
                               className={[
-                                "h-[42px] px-4 rounded-[4px] border font-mono text-[11px] tracking-[0.1em] transition-all duration-[180ms]",
+                                "h-[42px] px-4 rounded-[4px] border font-mono text-[13px] md:text-[11px] tracking-[0.1em] transition-all duration-[180ms]",
                                 isSelected
                                   ? "bg-ink border-ink text-cream cursor-pointer"
                                   : slot.available
@@ -487,7 +487,7 @@ export function BookVisit() {
                               ].join(" ")}
                             >
                               {slot.time}
-                              <span className="ml-[8px] font-sans text-[11px] tracking-normal normal-case opacity-70">
+                              <span className="ml-[8px] font-sans text-[13px] md:text-[11px] tracking-normal normal-case opacity-70">
                                 {slot.label}
                               </span>
                             </button>
@@ -503,7 +503,7 @@ export function BookVisit() {
             {/* Form */}
             <div className="border-t border-line-soft pt-10">
               <div className="flex items-baseline gap-4 mb-6">
-                <span className="font-mono text-[10.5px] tracking-[0.2em] uppercase text-muted">03</span>
+                <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.2em] uppercase text-muted">03</span>
                 <h2 className="font-serif font-light text-[28px] leading-none">Your details</h2>
               </div>
 
@@ -523,7 +523,7 @@ export function BookVisit() {
 
                 {/* Guests */}
                 <div>
-                  <label htmlFor="guests" className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+                  <label htmlFor="guests" className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
                     Number of guests
                   </label>
                   <div className="relative">
@@ -531,7 +531,7 @@ export function BookVisit() {
                       id="guests"
                       value={form.guests}
                       onChange={(e) => set("guests")(e.target.value)}
-                      className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] appearance-none cursor-pointer"
+                      className="w-full border border-line bg-paper/70 px-[14px] h-[46px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] appearance-none cursor-pointer"
                     >
                       {[1,2,3,4,5,6].map(n => (
                         <option key={n} value={String(n)}>
@@ -547,9 +547,9 @@ export function BookVisit() {
 
                 {/* Notes */}
                 <div>
-                  <label htmlFor="notes" className="block font-mono text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
+                  <label htmlFor="notes" className="block font-mono text-[12px] md:text-[10px] tracking-[0.16em] uppercase text-muted mb-[6px]">
                     Special requests
-                    <span className="ml-2 opacity-60 normal-case font-sans text-[10px] tracking-normal">(optional)</span>
+                    <span className="ml-2 opacity-60 normal-case font-sans text-[12px] md:text-[10px] tracking-normal">(optional)</span>
                   </label>
                   <textarea
                     id="notes"
@@ -557,7 +557,7 @@ export function BookVisit() {
                     onChange={(e) => set("notes")(e.target.value)}
                     placeholder="Allergies, accessibility needs, fragrance preferences…"
                     rows={4}
-                    className="w-full border border-line bg-paper/70 px-[14px] py-[12px] font-sans text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50 resize-none"
+                    className="w-full border border-line bg-paper/70 px-[14px] py-[12px] font-sans text-[15.5px] md:text-[14px] text-ink rounded-[4px] focus:outline-none focus:border-ink transition-colors duration-[180ms] placeholder:text-muted/50 resize-none"
                   />
                 </div>
               </div>
@@ -569,18 +569,18 @@ export function BookVisit() {
               {(selectedDate || selectedTime) && (
                 <div className="bg-paper border border-line-soft rounded-[4px] px-5 py-4 mb-5 grid gap-[6px]">
                   {selectedDate && (
-                    <div className="flex justify-between items-baseline font-mono text-[10.5px] tracking-[0.12em] uppercase">
+                    <div className="flex justify-between items-baseline font-mono text-[12.5px] md:text-[10.5px] tracking-[0.12em] uppercase">
                       <span className="text-muted">Date</span>
                       <span className="text-ink">{formatDate(selectedDate)}</span>
                     </div>
                   )}
                   {selectedTime && (
-                    <div className="flex justify-between items-baseline font-mono text-[10.5px] tracking-[0.12em] uppercase">
+                    <div className="flex justify-between items-baseline font-mono text-[12.5px] md:text-[10.5px] tracking-[0.12em] uppercase">
                       <span className="text-muted">Time</span>
                       <span className="text-ink">{selectedTime}</span>
                     </div>
                   )}
-                  <div className="flex justify-between items-baseline font-mono text-[10.5px] tracking-[0.12em] uppercase">
+                  <div className="flex justify-between items-baseline font-mono text-[12.5px] md:text-[10.5px] tracking-[0.12em] uppercase">
                     <span className="text-muted">Price</span>
                     <span className="text-sage">Complimentary</span>
                   </div>
@@ -588,7 +588,7 @@ export function BookVisit() {
               )}
 
               {!canSubmit && (
-                <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted mb-4">
+                <p className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted mb-4">
                   {!selectedDate
                     ? "Select a date to continue"
                     : !selectedTime
@@ -601,7 +601,7 @@ export function BookVisit() {
                 onClick={handleConfirm}
                 disabled={!canSubmit || placing}
                 className={[
-                  "w-full h-[54px] rounded-[4px] border font-sans text-[13px] tracking-[0.1em] uppercase font-medium",
+                  "w-full h-[54px] rounded-[4px] border font-sans text-[14.5px] md:text-[13px] tracking-[0.1em] uppercase font-medium",
                   "transition-all duration-[280ms] flex items-center justify-center gap-[12px]",
                   placing
                     ? "bg-sage border-sage text-cream cursor-default"
@@ -623,7 +623,7 @@ export function BookVisit() {
                 )}
               </button>
 
-              <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-muted text-center mt-4">
+              <p className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] uppercase text-muted text-center mt-4">
                 Free to attend · Cancellation up to 24 hours before
               </p>
             </div>

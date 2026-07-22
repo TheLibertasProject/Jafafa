@@ -22,7 +22,7 @@ const VALUES = [
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">About</span>
@@ -38,7 +38,7 @@ export function About() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[60px] pb-[120px] max-[880px]:pb-16">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">The Maison · est. MMXIX</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">The Maison · est. MMXIX</div>
         <h1
           className="font-serif font-light leading-[0.9] mt-6 mb-6"
           style={{ fontSize: "clamp(72px, 12vw, 200px)" }}
@@ -97,9 +97,9 @@ export function About() {
               key={v.no}
               className={`px-[30px] py-10 border-r border-line-soft last:border-r-0 ${i === 1 ? "max-[880px]:border-r-0" : ""}`}
             >
-              <div className="font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted">{v.no}</div>
+              <div className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted">{v.no}</div>
               <div className="font-serif font-light text-[28px] mt-3 mb-2">{v.nm}</div>
-              <div className="text-[13px] text-ink-2 leading-[1.6]">{v.dsc}</div>
+              <div className="text-[14.5px] md:text-[13px] text-ink-2 leading-[1.6]">{v.dsc}</div>
             </div>
           ))}
         </div>
@@ -111,7 +111,7 @@ export function About() {
           className="grid grid-cols-[2fr_3fr] gap-[60px] py-20 items-center max-[880px]:grid-cols-1 max-[880px]:gap-[30px]"
         >
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">The perfumers</div>
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">The perfumers</div>
             <h2
               className="font-serif font-light leading-[0.95] mt-4 mb-[18px]"
               style={{ fontSize: 64 }}
@@ -132,7 +132,7 @@ export function About() {
             </p>
             <Link
               href="/journal"
-              className="font-mono text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group"
+              className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase border-b border-current pb-1 inline-flex gap-[10px] items-center mt-6 group"
             >
               Read their notebook{" "}
               <span className="inline-block transition-transform duration-[240ms] group-hover:translate-x-1">
@@ -157,15 +157,15 @@ export function About() {
       {/* Timeline */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
         <div className="pt-[60px] pb-[60px] border-t border-line">
-          <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2 mb-6">Chronology</div>
+          <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2 mb-6">Chronology</div>
           {TIMELINE.map((row) => (
             <div
               key={row.yr}
               className="grid grid-cols-[120px_1fr_1.6fr] gap-10 py-[30px] border-b border-line-soft items-baseline max-[880px]:grid-cols-[80px_1fr] max-[880px]:gap-5"
             >
-              <div className="font-mono text-[13px] tracking-[0.14em] text-sage">{row.yr}</div>
+              <div className="font-mono text-[14.5px] md:text-[13px] tracking-[0.14em] text-sage">{row.yr}</div>
               <div className="font-serif font-light text-[28px]">{row.hd}</div>
-              <div className="text-ink-2 text-[14px] leading-[1.6] max-w-[50ch] max-[880px]:col-start-2">{row.bd}</div>
+              <div className="text-ink-2 text-[15.5px] md:text-[14px] leading-[1.6] max-w-[50ch] max-[880px]:col-start-2">{row.bd}</div>
             </div>
           ))}
         </div>
@@ -177,7 +177,7 @@ export function About() {
           className="p-[60px_50px] bg-ink text-cream grid grid-cols-[1.4fr_1fr] items-center gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-8 max-[880px]:p-[40px_24px]"
         >
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-cream/60">Visit the maison</div>
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-cream/60">Visit the maison</div>
             <h2 className="font-serif font-light text-[56px] leading-[0.95] mt-3 mb-3 text-cream">Helsinki · by appointment</h2>
             <p className="text-cream/80 max-w-[50ch] leading-[1.7]">
               Korkeavuorenkatu 22. Tuesday through Saturday, twelve to six.
@@ -187,7 +187,7 @@ export function About() {
           <div className="justify-self-end max-[880px]:justify-self-start">
             <Link
               href="/book-visit"
-              className="inline-flex items-center justify-center h-[46px] px-[26px] bg-cream text-ink border border-cream hover:opacity-[0.84] font-sans text-[12px] tracking-[0.2em] uppercase font-medium rounded-full transition-opacity duration-[220ms]"
+              className="inline-flex items-center justify-center h-[46px] px-[26px] bg-cream text-ink border border-cream hover:opacity-[0.84] font-sans text-[13.5px] md:text-[12px] tracking-[0.2em] uppercase font-medium rounded-full transition-opacity duration-[220ms]"
             >
               Book a visit →
             </Link>

@@ -31,7 +31,7 @@ const SECTIONS = [
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Care guide</span>
@@ -49,7 +49,7 @@ export function CareGuide() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[40px] pb-16 max-[880px]:pb-10">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">How to keep it</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">How to keep it</div>
         <h1
           className="font-serif font-light leading-[0.92] mt-[14px] mb-6"
           style={{ fontSize: "clamp(56px,8vw,128px)" }}
@@ -70,9 +70,9 @@ export function CareGuide() {
               key={s.no}
               className="grid grid-cols-[120px_1fr_1.6fr] gap-10 py-[42px] border-b border-line-soft items-baseline max-[880px]:grid-cols-1 max-[880px]:gap-3 max-[880px]:py-8"
             >
-              <div className="font-mono text-[13px] tracking-[0.14em] text-sage">N° {s.no}</div>
+              <div className="font-mono text-[14.5px] md:text-[13px] tracking-[0.14em] text-sage">N° {s.no}</div>
               <div className="font-serif font-light text-[30px] leading-[1.1] max-[880px]:text-[26px]">{s.hd}</div>
-              <div className="text-ink-2 text-[15px] leading-[1.75] max-w-[54ch]">{s.bd}</div>
+              <div className="text-ink-2 text-[16px] md:text-[15px] leading-[1.75] max-w-[54ch]">{s.bd}</div>
             </div>
           ))}
         </div>
@@ -82,7 +82,7 @@ export function CareGuide() {
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-4 pb-0">
         <div className="p-[60px_50px] bg-ink text-cream grid grid-cols-[1.4fr_1fr] items-center gap-[60px] max-[880px]:grid-cols-1 max-[880px]:gap-8 max-[880px]:p-[40px_24px]">
           <div>
-            <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-cream/60">Running low?</div>
+            <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-cream/60">Running low?</div>
             <h2 className="font-serif font-light text-[48px] leading-[0.95] mt-3 mb-3 text-cream max-[720px]:text-[36px]">
               Refill it, don&apos;t replace it.
             </h2>
@@ -94,7 +94,7 @@ export function CareGuide() {
           <div className="justify-self-end max-[880px]:justify-self-start">
             <Link
               href="/shipping-returns"
-              className="inline-flex items-center justify-center h-[46px] px-[26px] bg-cream text-ink border border-cream hover:opacity-[0.84] font-sans text-[12px] tracking-[0.2em] uppercase font-medium rounded-full transition-opacity duration-[220ms] gap-[10px]"
+              className="inline-flex items-center justify-center h-[46px] px-[26px] bg-cream text-ink border border-cream hover:opacity-[0.84] font-sans text-[13.5px] md:text-[12px] tracking-[0.2em] uppercase font-medium rounded-full transition-opacity duration-[220ms] gap-[10px]"
             >
               Shipping &amp; returns
               <ArrowRightIcon />

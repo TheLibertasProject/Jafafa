@@ -49,7 +49,7 @@ export function Hero() {
       {/* Bottom-aligned, centered editorial content */}
       <div className="relative w-full max-w-[1240px] mx-auto px-[52px] pb-[9.5vh] flex flex-col items-center text-center max-[720px]:px-6">
         <div
-          className="reveal font-sans font-medium text-[11px] uppercase mb-[30px] max-[720px]:text-[10px]"
+          className="reveal font-sans font-medium text-[13px] md:text-[11px] uppercase mb-[30px] max-[720px]:text-[12px] md:text-[10px]"
           style={{ letterSpacing: "0.34em", color: "rgba(245,238,226,.82)" }}
         >
           Maison Jafafa · Olfactive Botanicals · Est. MMXIX

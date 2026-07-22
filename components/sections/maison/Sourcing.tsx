@@ -44,7 +44,7 @@ const PARTNERS: { no: string; material: string; place: string; line: string }[] 
 function Crumbs() {
   return (
     <div className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5">
-      <div className="flex gap-[10px] items-center font-mono text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
+      <div className="flex gap-[10px] items-center font-mono text-[12.5px] md:text-[10.5px] tracking-[0.18em] uppercase text-muted py-7 pb-[14px]">
         <Link href="/" className="hover:text-ink transition-colors">Maison</Link>
         <span className="opacity-50">/</span>
         <span className="text-ink">Sourcing</span>
@@ -60,7 +60,7 @@ export function Sourcing() {
 
       {/* Hero */}
       <section className="w-full max-w-[1440px] mx-auto px-10 max-[720px]:px-5 pt-[40px] pb-16">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-2">Where the botanicals come from</div>
+        <div className="font-mono text-[13px] md:text-[11px] tracking-[0.18em] uppercase text-ink-2">Where the botanicals come from</div>
         <h1
           className="font-serif font-light leading-[0.94] mt-[14px] mb-6"
           style={{ fontSize: "clamp(56px, 8vw, 120px)" }}
@@ -93,10 +93,10 @@ export function Sourcing() {
               key={p.no}
               className="grid grid-cols-[50px_1fr_1fr_2fr] gap-8 py-8 border-b border-line-soft items-baseline max-[880px]:grid-cols-1 max-[880px]:gap-[6px] max-[880px]:py-6"
             >
-              <span className="font-mono text-[10px] tracking-[0.12em] text-muted/50 max-[880px]:hidden">{p.no}</span>
+              <span className="font-mono text-[12px] md:text-[10px] tracking-[0.12em] text-muted/50 max-[880px]:hidden">{p.no}</span>
               <span className="font-serif font-light text-[26px] leading-none">{p.material}</span>
-              <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-muted">{p.place}</span>
-              <span className="text-ink-2 text-[15px] leading-[1.6] max-w-[52ch]">{p.line}</span>
+              <span className="font-mono text-[12.5px] md:text-[10.5px] tracking-[0.16em] uppercase text-muted">{p.place}</span>
+              <span className="text-ink-2 text-[16px] md:text-[15px] leading-[1.6] max-w-[52ch]">{p.line}</span>
             </div>
           ))}
         </div>
